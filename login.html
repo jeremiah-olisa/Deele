@@ -12,6 +12,7 @@
     />
     <link rel="stylesheet" href="./assets/styles/auth.css" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./assets/scripts/login.js"></script>
   </head>
   <body>
     <div class="m-o p-0 w-full flex h-screen">
@@ -34,7 +35,7 @@
         <div></div>
       </aside>
       <aside id="signup" class="w-6/12 h-full flex justify-center items-center">
-        <form action="" class="flex flex-col gap-8 w-[500px]">
+        <form onsubmit="login()" class="flex flex-col gap-8 w-[500px]">
           <div id="form-header" class="flex flex-col gap-6">
             <h2 class="auth-header">Sign Up</h2>
             <p class="auth-desc">
@@ -44,12 +45,34 @@
           </div>
           <div id="form-content" class="flex flex-col gap-8">
             <div class="flex flex-col">
-              <label for="emailAddress" class="auth-label">Email Address</label>
-              <input type="email" name="emailAddress" id="emailAddress" />
+              <label for="username" class="auth-label"
+                >Username or Email Address</label
+              >
+              <input
+                type="text"
+                name="username"
+                id="username"
+                class="input"
+                required
+              />
+              <span class="text-red-400 hidden">error</span>
             </div>
             <div class="flex flex-col">
               <label for="password" class="auth-label">Password</label>
-              <input type="password" name="password" id="password" />
+              <div class="relative flex group">
+                <input
+                  type="password"
+                  name="password"
+                  id="password"
+                  class="input w-full"
+                  required
+                  minlength="6"
+                />
+                <div class="absolute auth-label right-1 bottom-2">
+                    <span>👀</span>
+                    <span>🫣</span>
+                </div>
+              </div>
             </div>
             <div class="flex justify-between">
               <div class="flex items-center flex-row-reverse gap-3">
@@ -64,7 +87,7 @@
               <p class="forgot-password">Forgot password?</p>
             </div>
           </div>
-          <button type="submit">Sign In</button>
+          <button class="auth-btn" type="submit">Sign In</button>
         </form>
       </aside>
     </div>

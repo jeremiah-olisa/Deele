@@ -29,7 +29,7 @@
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
-  line-height: 26px;
+  /* line-height: 26px; */
   /* identical to box height, or 162% */
 
   /* Neutral/04/100% */
@@ -70,4 +70,20 @@
   font-size: 16px;
   line-height: 28px;
   color: #ffffff;
+}
+
+.input {
+  /* Neutral/03/100% */
+  border-bottom: 2px solid #e8ecef;
+  padding-right: 4px;
+  padding-left: 4px;
+  /* height: 15px; */
+  /* transition: padding-top 0.3s, padding-bottom 0.3s; */
+  transition: padding-top 0.08s ease-out, padding-bottom 0.08s ease-out;
+}
+
+.input:focus {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  height: auto;
 }
