@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              crimson: "hsla(354, 70%, 50%, 1)",
+              "steel-blue": "hsla(207, 54%, 51%, 1)",
+              "carrot-orange": "hsla(32, 90%, 59%, 1)",
+              "dark-purple": "hsla(250, 50%, 12%, 1)",
+              "red-cmyk": "hsla(1, 89%, 55%, 1)",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body>
+    <div class="w-full h-screen">
+      <div class="flex justify-center p-3 w-full bg-slate-800">
+        <h2 class="text-slate-50 text-4xl">Deele</h2>
+      </div>
+      <div
+        class="h-[calc(100vh-64px)] bg-slate-700 justify-center items-center flex"
+      >
+        <div
+          class="flex flex-col gap-5 bg-crimson p-4 rounded-lg w-[90%] sm:w-[500px]"
+        >
+          <h2 class="text-xl text-gray-100">Login to Deele</h2>
+          <form class="flex flex-col gap-3" action="">
+            <div class="flex flex-col gap-y-3">
+              <label class="text-white" for="email">Email Address</label>
+              <input
+                class="w-full py-1.5 rounded"
+                type="email"
+                name="email"
+                id="email"
+              />
+            </div>
+            <div class="flex flex-col gap-y-3">
+              <label class="text-white" for="password">Password</label>
+              <input
+                class="w-full py-1.5 rounded"
+                type="password"
+                name="password"
+                id="password"
+              />
+            </div>
+            <button
+              class="bg-slate-800 rounded text-white py-2 mt-5"
+              type="submit"
+            >
+              Submit
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/styles/auth.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div class="m-o p-0 w-full flex h-screen">
+      <aside
+        id="banner"
+        class="w-6/12 bg-[#F2F4F6] flex flex-col justify-between h-full items-center p-8"
+      >
+        <div>
+          <h2
+            class="font-['Poppins'] font-medium text-2xl text-center text-black"
+          >
+            Deele
+          </h2>
+        </div>
+        <img
+          src="./assets/images/supermarket-cart.png"
+          class="h-[350px] w-auto justify-self-center"
+          alt="Banner Image of a man standing beside a shopping cart"
+        />
+        <div></div>
+      </aside>
+      <aside id="signup" class="w-6/12 h-full flex justify-center items-center">
+        <form action="" class="flex flex-col gap-8 w-[500px]">
+          <div id="form-header" class="flex flex-col gap-6">
+            <h2 class="auth-header">Sign Up</h2>
+            <p class="auth-desc">
+              Don’t have an account yet?
+              <span class="text-[#38CB89]">Sign Up</span>
+            </p>
+          </div>
+          <div id="form-content" class="flex flex-col gap-8">
+            <div class="flex flex-col">
+              <label for="emailAddress" class="auth-label">Email Address</label>
+              <input type="email" name="emailAddress" id="emailAddress" />
+            </div>
+            <div class="flex flex-col">
+              <label for="password" class="auth-label">Password</label>
+              <input type="password" name="password" id="password" />
+            </div>
+            <div class="flex justify-between">
+              <div class="flex items-center flex-row-reverse gap-3">
+                <label class="auth-label" for="rememberMe">Remember me</label>
+                <input
+                  type="checkbox"
+                  name="rememberMe"
+                  id="rememberMe"
+                  class="checkbox"
+                />
+              </div>
+              <p class="forgot-password">Forgot password?</p>
+            </div>
+          </div>
+          <button type="submit">Sign In</button>
+        </form>
+      </aside>
+    </div>
+  </body>
+</html>
