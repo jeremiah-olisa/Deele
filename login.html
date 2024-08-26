@@ -15,10 +15,10 @@
     <script src="./assets/scripts/login.js"></script>
   </head>
   <body>
-    <div class="m-o p-0 w-full flex h-screen">
+    <div class="m-o p-0 w-full flex max-md:flex-col h-screen">
       <aside
         id="banner"
-        class="w-6/12 bg-[#F2F4F6] flex flex-col justify-between h-full items-center p-8"
+        class="md:w-6/12 bg-[#F2F4F6] flex flex-col justify-between h-full items-center p-8 max-md:h-[100px]"
       >
         <div>
           <h2
@@ -29,12 +29,15 @@
         </div>
         <img
           src="./assets/images/supermarket-cart.png"
-          class="h-[350px] w-auto justify-self-center"
+          class="h-[350px] w-auto justify-self-center max-md:hidden"
           alt="Banner Image of a man standing beside a shopping cart"
         />
-        <div></div>
+        <div class="max-md:hidden"></div>
       </aside>
-      <aside id="signup" class="w-6/12 h-full flex justify-center items-center">
+      <aside
+        id="signup"
+        class="md:w-6/12 h-full flex justify-center items-center max-lg:p-8"
+      >
         <form onsubmit="login()" class="flex flex-col gap-8 w-[500px]">
           <div id="form-header" class="flex flex-col gap-6">
             <h2 class="auth-header">Sign Up</h2>
@@ -69,19 +72,19 @@
                   minlength="6"
                 />
                 <div class="absolute auth-label right-1 bottom-2">
-                    <span>👀</span>
-                    <span>🫣</span>
+                  <span>👀</span>
+                  <span>🫣</span>
                 </div>
               </div>
             </div>
-            <div class="flex justify-between">
-              <div class="flex items-center flex-row-reverse gap-3">
+            <div class="flex justify-between max-[320px]:flex-col max-[320px]:gap-y-3">
+              <div class="flex items-center gap-3">
                 <label class="auth-label" for="rememberMe">Remember me</label>
                 <input
                   type="checkbox"
                   name="rememberMe"
                   id="rememberMe"
-                  class="checkbox"
+                  class="checkbox -order-1"
                 />
               </div>
               <p class="forgot-password">Forgot password?</p>
