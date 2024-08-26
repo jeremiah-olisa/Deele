@@ -11,8 +11,8 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./assets/styles/auth.css" />
+    <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet"/>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="./assets/scripts/login.js"></script>
   </head>
   <body>
     <div class="m-o p-0 w-full flex max-md:flex-col h-screen">
@@ -71,13 +71,19 @@
                   required
                   minlength="6"
                 />
-                <div class="absolute auth-label right-1 bottom-2">
-                  <span>👀</span>
-                  <span>🫣</span>
-                </div>
+                <button
+                  onclick="togglePasswordMode()"
+                  type="button"
+                  class="absolute auth-label right-1 bottom-2"
+                >
+                  <span id="eyes-icon" class="block">👀</span>
+                  <span id="peeping-icon" class="hidden">🫣</span>
+                </button>
               </div>
             </div>
-            <div class="flex justify-between max-[320px]:flex-col max-[320px]:gap-y-3">
+            <div
+              class="flex justify-between max-[320px]:flex-col max-[320px]:gap-y-3"
+            >
               <div class="flex items-center gap-3">
                 <label class="auth-label" for="rememberMe">Remember me</label>
                 <input
@@ -94,5 +100,8 @@
         </form>
       </aside>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <script src="./assets/scripts/login.js"></script>
   </body>
 </html>
