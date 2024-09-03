@@ -1,3 +1,10 @@
+<script setup>
+import NavigationBar from './components/layout/NavigationBar.vue';
+import PromotionHeader from './components/layout/PromotionHeader.vue'
+</script>
 <template>
-  <H2>THis is my app</H2>
+  <PromotionHeader />
+  <section>
+    <NavigationBar />
+  </section>
 </template>
