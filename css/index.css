@@ -1,0 +1,23 @@
+*{
+    font-family: inter, poppins;
+}
+.banner{
+    background: url(../Images/Banner.jpeg) no-repeat;
+    background-size: cover;
+    width: 1120px;
+    min-height: 392px;
+    margin-left: 95px;
+    margin-right: 80px;
+}
+.Newsletter{
+    background: url(../Images/Newsletter.png) no-repeat;
+    background-size: cover;
+    width: 1440px;
+    height: 350px;
+}
+ .border_right{
+    height: 30px;
+    align-self: center;
+    width: 2px;
+    background: #6C7275;
+ }
