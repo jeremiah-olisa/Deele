@@ -12,6 +12,8 @@ export default {
       },
       fontFamily: {
         inter: ['inter', 'sans'],
+        poppins: ['poppins', 'inter'],
+        'space-grotesk': ['Space Grotesk', 'poppins'],
       }
     },
   },
