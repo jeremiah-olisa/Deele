@@ -9,3 +9,11 @@
 * {
   @apply font-inter;
 }
+
+.btn {
+  @apply text-center rounded-lg gap-2 py-3 px-14;
+}
+
+.btn.dark {
+  @apply bg-[#141718] text-gray-100;
+}
