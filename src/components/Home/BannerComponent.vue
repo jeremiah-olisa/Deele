@@ -1,10 +1,10 @@
 <script setup></script>
 <template>
-  <div class="grid grid-cols-2 gap-4 justify-center items-center max-md:py-4">
+  <div class="flex max-md:flex-col gap-4 justify-center items-center max-md:py-4">
     <div class="max-md:order-2">
       <img
         src="./../../assets/images/banner-img.png"
-        class="md:h-[calc(100vh-300px)] w-auto"
+        class="h-auto w-[690px]"
         alt="Banner Image"
       />
     </div>
@@ -25,10 +25,10 @@
 
 <style scoped>
 .banner-header {
-  @apply font-poppins font-medium max-sm:text-3xl sm:text-5xl md:text-6xl text-[#121212];
+  @apply font-poppins font-bold md:font-medium text-xl max-sm:text-2xl sm:text-3xl md:text-4xl xl:text-5xl 2xl:text-6xl text-[#121212];
 }
 
 .banner-desc {
-  @apply font-normal text-xl text-[#121212];
+  @apply font-light md:font-normal text-lg md:text-xl text-[#121212];
 }
 </style>

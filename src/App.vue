@@ -6,7 +6,7 @@ import PromotionHeader from './components/layout/PromotionHeader.vue'
 
 <template>
   <PromotionHeader />
-  <section class="px-4 sm:px-20 md:px-40 bg-gradient-to-br from-[#FFC94D] to-[#F9A825]">
+  <section class="p-4 sm:px-10 md:px-12 lg:px-16 2xl:px-40 bg-gradient-to-br from-[#FFC94D] to-[#F9A825]">
     <NavigationBar />
     <BannerComponent />
   </section>
