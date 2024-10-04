@@ -2,7 +2,7 @@
 import { X, TicketPercent, ArrowRight } from 'lucide-vue-next'
 import { ref } from 'vue'
 
-const isVisible = ref(true);
+const isVisible = ref(true)
 </script>
 
 <template>

@@ -9,7 +9,7 @@ import { CircleUserRound, Search, ShoppingBag } from 'lucide-vue-next'
       <RouterLink to="/">Home</RouterLink>
       <RouterLink to="/products">Shop</RouterLink>
       <RouterLink to="/product">Product</RouterLink>
-      <RouterLink to="">Cart</RouterLink>
+      <RouterLink to="/cart">Cart</RouterLink>
     </div>
     <div class="flex gap-4">
       <Search :size="24" />
@@ -17,7 +17,7 @@ import { CircleUserRound, Search, ShoppingBag } from 'lucide-vue-next'
       <div class="relative">
         <ShoppingBag :size="24" />
         <span
-          class="bg-[#141718] text-yellow text-xs font-medium rounded-full px-1.5 absolute -top-1 -right-2"
+          class="bg-[#141718] text-white text-xs font-medium rounded-full px-1.5 absolute -top-1 -right-2"
           >2</span
         >
       </div>

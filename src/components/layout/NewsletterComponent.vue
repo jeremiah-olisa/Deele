@@ -1,3 +1,6 @@
+<script setup lang="ts">
+import { ArrowLeft, ArrowRight, Mail } from 'lucide-vue-next'
+</script>
 <template>
   <div class="new-arrivals relative bg-[url('/images/footer-bg.png')]">
     <img src="/images/footer-bg.png" alt="Image" class="w-full h-auto" />
@@ -8,7 +11,7 @@
         <div class="flex items-center justify-center">
           <form class="pt-8 border-b border-gray-400">
             <div class="flex items-center justify-between">
-              <!-- <img src="/img/email.png" alt="" class="h-4" /> -->
+              <Mail color="#f2f4f6" />
               <input
                 type="email"
                 id="email"

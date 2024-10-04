@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import NavigationBar from '@/components/layout/NavigationBar.vue'
+import ProductDisplayComponent from '@/components/Shop/ProductDisplayComponent.vue'
+import NewsletterComponent from '@/components/layout/NewsletterComponent.vue'
 import { ArrowLeft, ArrowRight } from 'lucide-vue-next'
 import { computed, ref } from 'vue'
 
@@ -39,11 +41,11 @@ const next = () => {
 </script>
 
 <template>
-  <section class="padding-container">
+  <section class="ps-20 pe-20">
     <NavigationBar />
   </section>
-  <div class="padding-container">
-    <div>
+  <div>
+    <div class="nav-links flex gap-2 font-thin ps-20 text-sm">
       <ul class="nav-links flex gap-2 font-thin text-sm">
         <li>
           <a href="#">Home ></a>
@@ -53,7 +55,7 @@ const next = () => {
         <li><a href="#" class="active font-normal">Product</a></li>
       </ul>
     </div>
-    <div class="tray-table grid grid-cols-2">
+    <div class="tray-table grid grid-cols-2 ps-20 pe-24 pt-5">
       <div class="table-page relative w-11/12">
         <button @click="prev" class="absolute top-[-50px] start-0 pt-96 pr-10">
           <ArrowLeft />
@@ -88,7 +90,7 @@ const next = () => {
       </div>
       <div class="text-page pe-4">
         <div class="inline-grid grid-cols-2 gap-2">
-          <!-- <img src="/img/Rating.png" alt="" /> -->
+          <img src="./../assets/images/Rating.png" alt="" />
           <h6 class="text-xs">11 Reviews</h6>
         </div>
         <h1 class="text-2xl font-semibold pt-6">Tray Table</h1>
@@ -130,10 +132,12 @@ const next = () => {
           <div>
             <h3 class="pt-5">Black</h3>
             <div class="small-table inline-grid grid-cols-4 gap-3 pt-5 w-80">
-              <!-- <div><img src="/img/Image 1.png" alt="" class="w-28" /></div>
-              <div><img src="/img/Image 2.png" alt="" class="w-28" /></div>
-              <div><img src="/img/Image 3.png" alt="" class="w-28" /></div>
-              <div><img src="/img/Image 4.png" alt="" class="w-28" /></div> -->
+              <div class="border">
+                <img :src="imageURLS[0]" alt="" class="w-full md:w-[262px] h-auto" />
+              </div>
+              <div><img :src="imageURLS[0]" alt="" class="w-full md:w-[262px] h-auto" /></div>
+              <div><img :src="imageURLS[0]" alt="" class="w-full md:w-[262px] h-auto" /></div>
+              <div><img :src="imageURLS[0]" alt="" class="w-full md:w-[262px] h-auto" /></div>
             </div>
           </div>
         </div>
@@ -145,7 +149,7 @@ const next = () => {
           </div>
           <div>
             <button class="flex gap-1 border border-solid rounded-md border-black p-1 pl-32 pr-32">
-              <!-- <img src="/img/heart.png" alt="" class="h-6 W-4" /> -->
+              <img src="./../assets/images/heart.png" alt="" class="h-6 W-4" />
               <span>Wishlist</span>
             </button>
           </div>
@@ -167,39 +171,22 @@ const next = () => {
         </div>
       </div>
     </div>
-    <div class="new-arrivals">
-      <div class="flex justify-between">
+    <div class="new-arrivals pt-10 pb-20">
+      <div class="flex justify-between ps-20 pe-32">
         <h1 class="font-bold">You might also like</h1>
         <div class="flex gap-0.5 font-extralight text-sm">
           <p>More Products</p>
-          <!-- <img src="/img/right-arrow.png" alt="" class="w-4" /> -->
+          <img src="./../assets/images/right-arrow.png" alt="" class="w-4" />
         </div>
       </div>
-      <div class="arrivals-cards flex gap-6">
-        <div class="relative">
-          <div class="flex flex-col justify-start items-start gap-1 absolute mt-3 pl-3">
-            <button
-              class="bg-[#FFFFFF] w-[60px] h-6 py-0 px-3.5 rounded font-[inter] text-base border"
-              type="button"
-            >
-              New
-            </button>
-            <button
-              class="bg-[#38CB89] w-[60px] h-6 py-0 px-3.5 rounded font-[inter] text-base"
-              type="button"
-            >
-              -50%
-            </button>
-          </div>
-          <!-- <img src="/img/card-1.png" alt="" />
-          <img src="/img/Rating.png" alt="" class="pt-1 w-16" /> -->
-          <h3>Loveseat Sofa</h3>
-          <p class="font-semibold pt-1 text-sm">
-            $199.00
-            <span class="font-extralight text-xs line-through pl-1">$400.00</span>
-          </p>
-        </div>
+      <div class="arrivals-cards flex gap-6 pt-8 ps-20">
+        <ProductDisplayComponent :rating="2" :tag="'New'" :percentage="50" :discount="200" />
+        <ProductDisplayComponent :rating="3" />
+        <ProductDisplayComponent :rating="4" />
+        <ProductDisplayComponent :rating="5" />
+        <ProductDisplayComponent :rating="6" />
       </div>
     </div>
   </div>
+  <section><NewsletterComponent /></section>
 </template>
