@@ -1,3 +1,7 @@
+<script setup lang="ts">
+import { Facebook, Instagram, Youtube } from 'lucide-vue-next'
+import { computed, ref } from 'vue'
+</script>
 <template>
   <footer class="bg-black text-white">
     <div class="flex justify-between align-middle pt-5 ps-28 pe-28 pb-20">
@@ -25,9 +29,9 @@
         </div>
       </div>
       <div class="flex gap-3">
-        <!-- <img src="/img/instagram.png" alt="" />
-          <img src="/img/facebook (1).png" alt="facee" />
-          <img src="/img/youtube.png" alt="" /> -->
+        <Instagram />
+        <Facebook />
+        <Youtube />
       </div>
     </div>
   </footer>
