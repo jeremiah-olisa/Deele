@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import NavigationBar from '@/components/layout/NavigationBar.vue'
-import FooterComponent from '@/components/layout/FooterComponent.vue'
-import { ArrowLeft, ArrowRight, X, TicketPercent } from 'lucide-vue-next'
-import { computed, ref } from 'vue'
+import CartMenu from '@/components/Cart/CartMenu.vue'
+import CartSummaryOption from '@/components/Cart/CartSummaryOption.vue'
+import { X, TicketPercent } from 'lucide-vue-next'
+import { ref } from 'vue'
 
 const mainImageIndex = ref(0)
 const imageURLS = [
@@ -21,18 +22,9 @@ const imageURLS = [
     <h1 class="text-4xl font-medium">Cart</h1>
   </div>
   <div class="flex justify-center gap-24">
-    <div class="border-b-2 border-black pb-2">
-      <button class="rounded-full bg-black text-white p-1 w-8">1</button
-      ><span class="text-[#B1B5C3] pl-3">Shopping cart</span>
-    </div>
-    <div>
-      <button class="rounded-full bg-[#B1B5C3] p-1 w-8 text-white">2</button
-      ><span class="text-[#B1B5C3] pl-3">Checkout details</span>
-    </div>
-    <div>
-      <button class="rounded-full bg-[#B1B5C3] p-1 w-8 text-white">3</button>
-      <span class="text-[#B1B5C3] pl-3">Order complete</span>
-    </div>
+    <CartMenu :page="1" name="Shopping Cart" :is-active="true" />
+    <CartMenu :page="2" name="Checkout details" :is-active="false" />
+    <CartMenu :page="3" name="Order complete" :is-active="false" />
   </div>
   <div class="flex justify-center gap-20 pt-10 pb-20">
     <div class="gap-2">
@@ -54,7 +46,7 @@ const imageURLS = [
                 <div class="flex flex-col">
                   <span class="font-bold pb-2">Tray Table</span>
                   <span class="text-xs pb-1">Colour: Black</span>
-                  <button class="flex gap-0.5 text-sm"><X size="20" /><span>Remove</span></button>
+                  <button class="flex gap-0.5 text-sm"><X :size="20" /><span>Remove</span></button>
                 </div>
               </div>
             </td>
@@ -89,7 +81,7 @@ const imageURLS = [
                 <div class="flex flex-col">
                   <span class="font-bold pb-2">Tray Table</span>
                   <span class="text-xs pb-1">Colour: Black</span>
-                  <button class="flex gap-0.5 text-sm"><X size="20" /><span>Remove</span></button>
+                  <button class="flex gap-0.5 text-sm"><X :size="20" /><span>Remove</span></button>
                 </div>
               </div>
             </td>
@@ -124,7 +116,7 @@ const imageURLS = [
                 <div class="flex flex-col">
                   <span class="font-bold pb-2">Tray Table</span>
                   <span class="text-xs pb-1">Colour: Black</span>
-                  <button class="flex gap-0.5 text-sm"><X size="20" /><span>Remove</span></button>
+                  <button class="flex gap-0.5 text-sm"><X :size="20" /><span>Remove</span></button>
                 </div>
               </div>
             </td>
@@ -156,39 +148,11 @@ const imageURLS = [
       <div class="pt-8 font-semibold">
         <h1>Cart summary</h1>
       </div>
-      <div class="pt-3">
-        <div
-          class="flex justify-between pl-2 pr-2 border border-black rounded-[4px] bg-[#F3F5F7] p-2"
-        >
-          <div>
-            <input type="radio" />
-            <span class="pl-2 pr-20">Free shipping</span>
-          </div>
-          <span>$20.00</span>
-        </div>
-      </div>
-      <div class="pt-4">
-        <div
-          class="flex justify-between pl-2 pr-2 border border-black rounded-[4px] bg-[#F3F5F7] p-2"
-        >
-          <div>
-            <input type="radio" />
-            <span class="pl-2 pr-20">Express shipping</span>
-          </div>
-          <span>$20.00</span>
-        </div>
-      </div>
-      <div class="pt-4">
-        <div
-          class="flex justify-between pl-2 pr-2 border border-black rounded-[4px] bg-[#F3F5F7] p-2"
-        >
-          <div>
-            <input type="radio" />
-            <span class="pl-2 pr-20">Pick Up</span>
-          </div>
-          <span>$20.00</span>
-        </div>
-      </div>
+      <form class="flex flex-col gap-4 pt-3">
+        <CartSummaryOption name="Free Shopping" :price="0" />
+        <CartSummaryOption name="Express shipping" :price="15" symbol="+$" />
+        <CartSummaryOption name="Pick Up" :price="20" symbol="%" />
+      </form>
       <div class="flex justify-between pt-8 pr-0.5">
         <span>Subtotal</span>
         <span>$60.00</span>
@@ -208,7 +172,7 @@ const imageURLS = [
     <h3 class="font-semibold">Have a coupon?</h3>
     <p class="font-light text-sm pt-1 pb-1">Add your code for an instant cart discount</p>
     <div class="flex items-center gap-2 border border-black w-[300px] p-2">
-      <TicketPercent class="ps-1" size="30" />
+      <TicketPercent class="ps-1" :size="30" />
       <div class="flex justify-between w-full text-sm">
         <span>coupon code</span>
         <span class="cursor-pointer font-medium">Apply</span>
