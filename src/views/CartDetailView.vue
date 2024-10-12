@@ -2,6 +2,8 @@
 import NavigationBar from '@/components/layout/NavigationBar.vue'
 import CartMenu from '@/components/Cart/CartMenu.vue'
 import CartSummaryOption from '@/components/Cart/CartSummaryOption.vue'
+import ProductOptions from '@/components/Cart/ProductOptions.vue'
+import CartOrderView from './CartOrderView.vue'
 import { X, TicketPercent } from 'lucide-vue-next'
 import { ref } from 'vue'
 
@@ -24,8 +26,11 @@ const imageURLS = [
   <div class="flex justify-center gap-24">
     <CartMenu :page="1" name="Shopping Cart" :is-active="true" />
     <CartMenu :page="2" name="Checkout details" :is-active="false" />
-    <CartMenu :page="3" name="Order complete" :is-active="false" />
+    <RouterLink to="/CartOrder">
+      <CartMenu :page="3" name="Order complete" :is-active="false" />
+    </RouterLink>
   </div>
+
   <div class="flex justify-center gap-20 pt-10 pb-20">
     <div class="gap-2">
       <table>
@@ -37,111 +42,19 @@ const imageURLS = [
             <th class="pr-14 pb-4">Subtotal</th>
           </tr>
         </thead>
-        <tbody>
-          <tr>
-            <td>
-              <div class="flex justify-start pt-10">
-                <img :src="imageURLS[0]" alt="" class="w-full md:w-[100px] h-auto" />
-                <!-- <img src="img/Image 1.png" alt="" /> -->
-                <div class="flex flex-col">
-                  <span class="font-bold pb-2">Tray Table</span>
-                  <span class="text-xs pb-1">Colour: Black</span>
-                  <button class="flex gap-0.5 text-sm"><X :size="20" /><span>Remove</span></button>
-                </div>
-              </div>
-            </td>
-            <td>
-              <div class="buttons flex gap-4 pt-12">
-                <div>
-                  <button class="border border-black rounded-md-1">
-                    <span class="p-2">-</span> 1
-                    <span class="p-2">+</span>
-                  </button>
-                </div>
-              </div>
-            </td>
-            <td>
-              <div class="pt-12">
-                <span>$19.00</span>
-              </div>
-            </td>
-            <td>
-              <div class="pt-12">
-                <span class="font-semibold">$38.00</span>
-              </div>
-            </td>
-          </tr>
-        </tbody>
-        <tbody>
-          <tr>
-            <td>
-              <div class="flex justify-start pt-10">
-                <img :src="imageURLS[0]" alt="" class="w-full md:w-[100px] h-auto" />
-                <!-- <img src="img/Image 1.png" alt="" /> -->
-                <div class="flex flex-col">
-                  <span class="font-bold pb-2">Tray Table</span>
-                  <span class="text-xs pb-1">Colour: Black</span>
-                  <button class="flex gap-0.5 text-sm"><X :size="20" /><span>Remove</span></button>
-                </div>
-              </div>
-            </td>
-            <td>
-              <div class="buttons flex gap-4 pt-12">
-                <div>
-                  <button class="border border-black rounded-md-1">
-                    <span class="p-2">-</span> 1
-                    <span class="p-2">+</span>
-                  </button>
-                </div>
-              </div>
-            </td>
-            <td>
-              <div class="pt-12">
-                <span>$19.00</span>
-              </div>
-            </td>
-            <td>
-              <div class="pt-12">
-                <span class="font-semibold">$38.00</span>
-              </div>
-            </td>
-          </tr>
-        </tbody>
-        <tbody>
-          <tr>
-            <td>
-              <div class="flex justify-start pt-10">
-                <img :src="imageURLS[0]" alt="" class="w-full md:w-[100px] h-auto" />
-                <!-- <img src="img/Image 1.png" alt="" /> -->
-                <div class="flex flex-col">
-                  <span class="font-bold pb-2">Tray Table</span>
-                  <span class="text-xs pb-1">Colour: Black</span>
-                  <button class="flex gap-0.5 text-sm"><X :size="20" /><span>Remove</span></button>
-                </div>
-              </div>
-            </td>
-            <td>
-              <div class="buttons flex gap-4 pt-12">
-                <div>
-                  <button class="border border-black rounded-md-1">
-                    <span class="p-2">-</span> 1
-                    <span class="p-2">+</span>
-                  </button>
-                </div>
-              </div>
-            </td>
-            <td>
-              <div class="pt-12">
-                <span>$19.00</span>
-              </div>
-            </td>
-            <td>
-              <div class="pt-12">
-                <span class="font-semibold">$38.00</span>
-              </div>
-            </td>
-          </tr>
-        </tbody>
+        <ProductOptions
+          :image="imageURLS[0]"
+          name="Tray Table"
+          colour="Colour: Black"
+          :price="199"
+        />
+        <ProductOptions :image="imageURLS[0]" name="Tray Table" colour="Colour: Red" :price="109" />
+        <ProductOptions
+          :image="imageURLS[0]"
+          name="Tray Table"
+          colour="Colour: Brown"
+          :price="189"
+        />
       </table>
     </div>
     <div class="cart-summary border border-black rounded-[4px] pl-5 pr-5">

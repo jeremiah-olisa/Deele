@@ -2,7 +2,8 @@
 import NavigationBar from '@/components/layout/NavigationBar.vue'
 import ProductDisplayComponent from '@/components/Shop/ProductDisplayComponent.vue'
 import NewsletterComponent from '@/components/layout/NewsletterComponent.vue'
-import { ArrowLeft, ArrowRight } from 'lucide-vue-next'
+import ProductReviewComponent from '@/components/Cart/ProductReviewComponent.vue'
+import { ArrowLeft, ArrowRight, Heart } from 'lucide-vue-next'
 import { computed, ref } from 'vue'
 
 const mainImageIndex = ref(0)
@@ -90,10 +91,11 @@ const next = () => {
       </div>
       <div class="text-page pe-4">
         <div class="inline-grid grid-cols-2 gap-2">
-          <img src="./../assets/images/Rating.png" alt="" />
+          <ProductReviewComponent :rating="5" />
+          <!-- <img src="./../assets/images/Rating.png" alt="" /> -->
           <h6 class="text-xs">11 Reviews</h6>
         </div>
-        <h1 class="text-2xl font-semibold pt-6">Tray Table</h1>
+        <h1 class="text-2xl font-semibold pt-4">Tray Table</h1>
         <p class="font-extralight break-normal">
           Buy one or buy a few and make every space where you sit more convenient. Light and easy to
           move around with removable tray top, handy for serving snacks.
@@ -142,21 +144,17 @@ const next = () => {
           </div>
         </div>
         <div class="buttons flex gap-4 pt-12">
-          <div>
-            <button class="bg-[#F5F5F5] p-1 pl-8 pr-9 border-solid rounded-md">
-              <span class="pr-5">-</span> 1 <span class="pl-5">+</span>
-            </button>
-          </div>
+          <ProductDisplayComponent />
           <div>
             <button class="flex gap-1 border border-solid rounded-md border-black p-1 pl-32 pr-32">
               <img src="./../assets/images/heart.png" alt="" class="h-6 W-4" />
-              <span>Wishlist</span>
+              <Heart :size="23" /><span class="font-semibold">Wishlist</span>
             </button>
           </div>
         </div>
         <div class="pt-4">
           <button
-            class="border border-solid rounded-md border-black text-white bg-black p-1 pl-52 pr-52"
+            class="border border-solid rounded-md border-black text-white bg-black p-1 pl-[220px] pr-[203px]"
           >
             Add to Cart
           </button>

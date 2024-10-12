@@ -4,6 +4,7 @@ import ProductDetailView from '@/views/ProductDetailView.vue'
 import ProductListView from '@/views/ProductListView.vue'
 import CartDetailView from '@/views/CartDetailView.vue'
 import { createRouter, createWebHistory, type RouteRecordRaw } from 'vue-router'
+import CartOrderView from '@/views/CartOrderView.vue'
 
 const routes: RouteRecordRaw[] = [
   { path: '/', component: HomeView },
@@ -11,6 +12,8 @@ const routes: RouteRecordRaw[] = [
   { path: '/products', component: ProductListView },
   { path: '/cart', component: CartDetailView },
   { path: '/:pathMatch(.*)*', component: NotFoundVIew },
+  { path: '/CartOrder', component: CartOrderView },
+
 ]
 
 
