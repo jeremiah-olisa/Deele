@@ -1,19 +1,11 @@
 <script setup lang="ts">
-import NavigationBar from '@/components/layout/NavigationBar.vue'
-import CartMenu from '@/components/Cart/CartMenu.vue'
-import CartSummaryOption from '@/components/Cart/CartSummaryOption.vue'
-import ProductOptions from '@/components/Cart/ProductOptions.vue'
-import CartOrderView from './CartOrderView.vue'
-import { X, TicketPercent } from 'lucide-vue-next'
-import { ref } from 'vue'
-
-const mainImageIndex = ref(0)
-const imageURLS = [
-  'https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/63/257805/1.jpg?2972',
-  'https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/72/2066921/1.jpg?9606',
-  'https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/83/1412401/1.jpg?9606',
-  'https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/08/2799081/1.jpg?9422'
-]
+import NavigationBar from "@/components/layout/NavigationBar.vue";
+import CartMenu from "@/components/Cart/CartMenu.vue";
+import CartSummaryOption from "@/components/Cart/CartSummaryOption.vue";
+import ProductOptions from "@/components/Cart/ProductOptions.vue";
+import CartOrderView from "./CartOrderView.vue";
+import { X, TicketPercent } from "lucide-vue-next";
+import { cartItems, emptyCart, subTotal } from "./../store/cart.store";
 </script>
 
 <template>
@@ -42,19 +34,7 @@ const imageURLS = [
             <th class="pr-14 pb-4">Subtotal</th>
           </tr>
         </thead>
-        <ProductOptions
-          :image="imageURLS[0]"
-          name="Tray Table"
-          colour="Colour: Black"
-          :price="199"
-        />
-        <ProductOptions :image="imageURLS[0]" name="Tray Table" colour="Colour: Red" :price="109" />
-        <ProductOptions
-          :image="imageURLS[0]"
-          name="Tray Table"
-          colour="Colour: Brown"
-          :price="189"
-        />
+        <ProductOptions v-for="(item, index) in cartItems" :item="item" :key="index" />
       </table>
     </div>
     <div class="cart-summary border border-black rounded-[4px] pl-5 pr-5">
@@ -68,15 +48,21 @@ const imageURLS = [
       </form>
       <div class="flex justify-between pt-8 pr-0.5">
         <span>Subtotal</span>
-        <span>$60.00</span>
+        <span>${{ subTotal }}</span>
       </div>
       <div class="flex justify-between pt-8 pr-0.5">
         <span>Total</span>
         <span>$120.00</span>
       </div>
-      <div class="text-center text-white pt-10">
+      <div class="flex flex-col gap-2 text-white pt-10">
         <button class="border border-black bg-black rounded-[4px] w-full h-auto p-1">
           Checkout
+        </button>
+        <button
+          @click="emptyCart"
+          class="border border-red-800 bg-red-600 rounded-[4px] w-full h-auto p-1"
+        >
+          Clear Cart
         </button>
       </div>
     </div>
