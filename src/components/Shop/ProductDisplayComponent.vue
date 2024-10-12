@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { defineProps } from 'vue'
+import { defineProps, ref, computed } from 'vue'
 import { Star, Minus, Plus } from 'lucide-vue-next'
 
 const props = defineProps<{
@@ -14,17 +14,6 @@ const quantity = ref(2)
 const subtotal = computed(() => props.price * quantity.value)
 </script>
 <template>
-  <div class="buttons flex gap-4 pt-12">
-    <div>
-      <button class="bg-[#F5F5F5] p-1 pl-8 pr-9 border-solid rounded-md">
-        <div>
-          <button @click="quantity--"><Minus :size="16" class="pt-1" /></button>
-          <span class="p-2">{{ quantity }}</span>
-          <button @click="quantity++"><Plus :size="15" class="pt-1" /></button>
-        </div>
-      </button>
-    </div>
-  </div>
   <div class="relative">
     <div class="flex flex-col justify-start items-start gap-1 absolute mt-3 pl-3">
       <button
