@@ -1,29 +1,29 @@
 <script setup lang="ts">
-import { removeFromCart, updateCartQuantity, type ICartItem } from "@/store/cart.store";
-import { X, TicketPercent, Minus, Plus } from "lucide-vue-next";
-import { ref, computed, defineProps, withDefaults, watch } from "vue";
+import { removeFromCart, updateCartQuantity, type ICartItem } from '@/store/cart.store'
+import { X, TicketPercent, Minus, Plus } from 'lucide-vue-next'
+import { ref, computed, defineProps, withDefaults, watch } from 'vue'
 
 const props = withDefaults(
   defineProps<{
-    item: ICartItem;
-    symbol?: string;
+    item: ICartItem
+    symbol?: string
   }>(),
-  { symbol: "$" }
-);
+  { symbol: '$' }
+)
 
-const quantity = ref(props.item.quantity);
+const quantity = ref(props.item.quantity)
 
 const increment = () => {
-  if (quantity.value < props.item.itemLeft) quantity.value += 1;
-  else alert("Out of stock");
-};
+  if (quantity.value < props.item.itemLeft) quantity.value += 1
+  else alert('Out of stock')
+}
 
 const decrement = () => {
-  if (quantity.value > 0) quantity.value -= 1;
-  else alert("You cant go below 0");
-};
+  if (quantity.value > 0) quantity.value -= 1
+  else alert('You cant go below 0')
+}
 
-const subtotal = computed(() => props.item.price * quantity.value);
+const subtotal = computed(() => props.item.price * quantity.value)
 
 watch([quantity], () => updateCartQuantity(props.item.id, quantity.value))
 </script>
@@ -35,7 +35,7 @@ watch([quantity], () => updateCartQuantity(props.item.id, quantity.value))
         <div class="flex justify-start pt-10">
           <img :src="item.imageURL" alt="" class="w-full md:w-[100px] h-auto" />
           <div class="flex flex-col">
-            <span class="bg-slate-800 text-white px-1 py-1 rounded-lg text-sm">{{
+            <span class="bg-slate-800 text-white px-1 py-1 rounded-sm text-sm w-5">{{
               item.id
             }}</span>
             <span class="font-bold pb-2">{{ item.name }}</span>

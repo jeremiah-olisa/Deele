@@ -11,7 +11,7 @@ import { ArrowLeft, ArrowRight, Mail } from 'lucide-vue-next'
         <div class="flex items-center justify-center">
           <form class="pt-8 border-b border-gray-400">
             <div class="flex items-center justify-between">
-              <Mail color="#f2f4f6" />
+              <Mail color="gray" />
               <input
                 type="email"
                 id="email"

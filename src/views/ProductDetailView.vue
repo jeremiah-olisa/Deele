@@ -3,6 +3,7 @@ import NavigationBar from '@/components/layout/NavigationBar.vue'
 import ProductDisplayComponent from '@/components/Shop/ProductDisplayComponent.vue'
 import NewsletterComponent from '@/components/layout/NewsletterComponent.vue'
 import ProductReviewComponent from '@/components/Shop/ProductReviewComponent.vue'
+import ProductQuantityBtn from '@/components/Shop/ProductQuantityBtn.vue'
 import { ArrowLeft, ArrowRight, Heart } from 'lucide-vue-next'
 import { computed, ref } from 'vue'
 
@@ -145,9 +146,10 @@ const next = () => {
         </div>
         <div class="buttons flex gap-4 pt-12">
           <div>
-            <button class="bg-[#F5F5F5] p-1 pl-8 pr-9 border-solid rounded-md">
+            <!-- <button class="bg-[#F5F5F5] p-1 pl-8 pr-9 border-solid rounded-md">
               <span class="pr-5">-</span> 1 <span class="pl-5">+</span>
-            </button>
+            </button> -->
+            <ProductQuantityBtn />
           </div>
           <div>
             <button class="flex gap-1 border border-solid rounded-md border-black p-1 pl-32 pr-32">
