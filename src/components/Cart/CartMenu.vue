@@ -19,5 +19,5 @@ defineProps<{
     >
       {{ page }}</button
     ><span :class="['pl-3', isActive ? 'text-[#23262F]' : 'text-[#B1B5C3]']">{{ name }}</span>
-  </div>
+      </div>
 </template>

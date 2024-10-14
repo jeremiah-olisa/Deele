@@ -19,8 +19,6 @@ const imageURLS = [
 ]
 </script>
 
-
-
 <template>
   
    <section

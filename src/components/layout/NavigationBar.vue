@@ -10,6 +10,7 @@ import { CircleUserRound, Search, ShoppingBag } from 'lucide-vue-next'
       <RouterLink to="/products">Shop</RouterLink>
       <RouterLink to="/product">Product</RouterLink>
       <RouterLink to="/cart">Cart</RouterLink>
+      <RouterLink to="/checkout">Checkout</RouterLink>
     </div>
     <div class="flex gap-4 md:pr-20">
       <Search :size="24" class="max-sm:w-3 max-md:w-4" />
