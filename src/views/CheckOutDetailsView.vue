@@ -213,32 +213,10 @@ import { TicketPercent } from 'lucide-vue-next';
               </tbody>
             </table>
           </div>
-
-
-
         </div>
-       
-        
-
-
-
       </div>
-
-
-
-
-
-
-
-
     </div>
-    </section>
-    
-    
-
-
-
-
+  </section>
 </template>
 
 
