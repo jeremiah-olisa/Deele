@@ -82,7 +82,7 @@ import { cartItems, emptyCart, subTotal } from './../store/cart.store'
           class="w-full py-1 text-center border-0 bg-transparent outline-none"
           placeholder="Enter Code"
         ></textarea>
-        <button @click="emptyCart" class="font-semibold pl-2">Apply</button>
+        <button class="font-semibold pl-2">Apply</button>
       </div>
     </div>
   </div>

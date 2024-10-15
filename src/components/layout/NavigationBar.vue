@@ -11,7 +11,7 @@ import { CircleUserRound, Search, ShoppingBag } from 'lucide-vue-next'
       <RouterLink to="/product">Product</RouterLink>
       <RouterLink to="/cart">Cart</RouterLink>
     </div>
-    <div class="flex gap-4">
+    <div class="flex gap-4 sm:pr-[40px]">
       <Search :size="24" />
       <CircleUserRound :size="24" />
       <div class="relative">
