@@ -29,7 +29,7 @@ const imageURLS = [
     <section class="banner ">
       <ShopBannerComponent/>    
     </section>
-    <section class="product  pt-14 pl-40 w-full">
+    <section class="product  pt-14 pl-40 w-full ml-8">
       <div class="Tool-bar flex justify-between w-full h-[82px] mb-10">
         <div class="drop-down flex flex-row gap-6">
           <div class="flex flex-col">

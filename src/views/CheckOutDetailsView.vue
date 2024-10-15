@@ -92,8 +92,8 @@ import { TicketPercent } from 'lucide-vue-next';
               <div class="flex flex-col">
                 <div class="flex gap-3 border w-[580px] h-[40px] pl-5 mt-3 items-center ">
                   <input type="radio" name="card" id="radio">
-                  <label class="font-inter text-xs"  for="Pay by Card Credit">Pay by Card Credit</label>
-                  <Banknote   :size="24" />
+                    <label class="font-inter text-xs"  for="Pay by Card Credit">Pay by Card Credit</label>
+                    <Banknote   :size="24" />  
                 </div>
                 <div class="flex gap-3 border w-[580px] h-[40px] pl-5 mt-3 items-center ">
                   <input type="radio" name="card" id="radio">

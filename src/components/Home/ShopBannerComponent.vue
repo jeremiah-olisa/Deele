@@ -21,10 +21,10 @@
 .banner{
     background: url(./../../assets/images/Banner.jpeg) no-repeat;
     background-size: cover;
-    width: 1120px;
+    width: 100%;
     min-height: 392px;
-    margin-left: 95px;
-    margin-right: 80px;
+    /* margin-left: 95px;
+    margin-right: 80px; */
 }
 /* .Newsletter{
     background: url(../Images/Newsletter.png) no-repeat;
