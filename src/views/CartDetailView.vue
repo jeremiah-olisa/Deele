@@ -23,7 +23,9 @@ const imageURLS = [
   </div>
   <div class="flex justify-center gap-24">
     <CartMenu :page="1" name="Shopping Cart" :is-active="true" />
-    <CartMenu :page="2" name="Checkout details" :is-active="false" />
+    <RouterLink to="/checkout">
+      <CartMenu :page="2" name="Checkout details" :is-active="false" />
+    </RouterLink>
     <CartMenu :page="3" name="Order complete" :is-active="false" />
   </div>
   <div class="flex justify-center gap-20 pt-10 pb-20">
