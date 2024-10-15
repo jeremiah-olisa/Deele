@@ -13,12 +13,15 @@ import { computed, ref } from 'vue'
           <span> Gift & Decoration Store</span>
         </div>
       </div>
-      <div class="flex gap-5 font-space-grotesk text-md">
+      <ul class="nav-links flex gap-5">
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/products">Shop</RouterLink>
         <RouterLink to="/product">Product</RouterLink>
-        <RouterLink to="/cart">Cart</RouterLink>
-      </div>
+        <!-- <li><a href="#">Home</a></li>
+        <li><a href="#">Shop</a></li>
+        <li><a href="#">Product</a></li> -->
+        <li><a href="#">Contact Us</a></li> 
+      </ul>
     </div>
     <div
       class="flex justify-between align-middle pt-5 ps-28 pe-28 pb-5 max-md:ps-10 max-md:pe-10 md:ps-10 md:pe-10"

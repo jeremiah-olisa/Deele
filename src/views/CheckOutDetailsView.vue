@@ -3,6 +3,7 @@ import NavigationBar from '@/components/layout/NavigationBar.vue'
 import { Check } from 'lucide-vue-next';
 import { Banknote } from 'lucide-vue-next';
 import { TicketPercent } from 'lucide-vue-next';
+import CartMenu from '@/components/Cart/CartMenu.vue';
 </script>
 
 
@@ -16,6 +17,11 @@ import { TicketPercent } from 'lucide-vue-next';
         <div class="px-44 ml-52 ">
           <h1 class="text-[#000000] text-4xl font-poppins">Check Out</h1>
         </div>
+        <!-- <div class="flex justify-center gap-24">
+          <CartMenu :name= "<Check/>"  name="Shopping Cart" :is-active="true" />
+          <CartMenu :page="2" name="Checkout details" :is-active="false" />
+          <CartMenu :page="3" name="Order complete" :is-active="false" />
+        </div> -->
         <div class="flex flex-row gap-8 pt-10 relative px-10 ml-52">
           <div class="flex font-inter text-sm text-[#38CB89] gap-4 border-b-2 pb-2 border-[#38CB89] ">
             <button class="absolute -left-2 top-9 rounded-full bg-[#38CB89]  text-[#FCFCFD] p-1 w-8"><Check /></button>
@@ -29,7 +35,7 @@ import { TicketPercent } from 'lucide-vue-next';
             <button class="sticky rounded-full bg-[#B1B5C3] text-[#FCFCFD] p-1 w-8">3</button>
             <span>order complete</span>  
           </div>
-        </div>
+        </div> 
         <div class=" flex flex-row gap-6 mt-16">  
           <div class=" form ">
             <div class=" box 1 border border-[#6C7275] rounded py-5 px-3">
