@@ -5,9 +5,9 @@ import NewsletterComponent from '@/components/layout/NewsletterComponent.vue';
 import ShopBannerComponent from '@/components/Home/ShopBannerComponent.vue';
 // import ProductRatingComponent from '@/components/Shop/ProductRatingComponent.vue';
 import { Grid3x3 } from 'lucide-vue-next';
-import { LayoutGrid } from 'lucide-vue-next';
-import { StretchVertical } from 'lucide-vue-next';
-import { StretchHorizontal } from 'lucide-vue-next';
+import { LayoutGrid, StretchVertical, StretchHorizontal  } from 'lucide-vue-next';
+// import { StretchVertical } from 'lucide-vue-next';
+// import { StretchHorizontal } from 'lucide-vue-next';
 import {ref} from 'vue'
 
 const mainImageIndex = ref(0)
@@ -56,7 +56,7 @@ const imageURLS = [
             <option value="1">Newest</option>
           </select>
           
-          <div class="flex flex-row w-6 h-5 gap-6 ">
+          <div class="flex gap-6 ">
             <Grid3x3 :size="18" />
             <LayoutGrid :size="18"/>
             <StretchVertical :size="18" />
