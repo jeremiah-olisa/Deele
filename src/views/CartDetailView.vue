@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import NavigationBar from "@/components/layout/NavigationBar.vue";
-import CartMenu from "@/components/Cart/CartMenu.vue";
-import CartSummaryOption from "@/components/Cart/CartSummaryOption.vue";
-import ProductOptions from "@/components/Cart/ProductOptions.vue";
-import CartOrderView from "./CartOrderView.vue";
-import { X, TicketPercent } from "lucide-vue-next";
-import { cartItems, emptyCart, subTotal } from "./../store/cart.store";
+import NavigationBar from '@/components/layout/NavigationBar.vue'
+import CartMenu from '@/components/Cart/CartMenu.vue'
+import CartSummaryOption from '@/components/Cart/CartSummaryOption.vue'
+import ProductOptions from '@/components/Cart/ProductOptions.vue'
+import CartOrderView from './CartOrderView.vue'
+import { X, TicketPercent } from 'lucide-vue-next'
+import { cartItems, emptyCart, subTotal } from './../store/cart.store'
 </script>
 
 <template>
@@ -54,7 +54,7 @@ import { cartItems, emptyCart, subTotal } from "./../store/cart.store";
         <span>Total</span>
         <span>$120.00</span>
       </div>
-      <div class="flex flex-col gap-2 text-white pt-10">
+      <div class="flex flex-col gap-2 text-white pt-16 pb-3">
         <button class="border border-black bg-black rounded-[4px] w-full h-auto p-1">
           Checkout
         </button>
@@ -73,8 +73,16 @@ import { cartItems, emptyCart, subTotal } from "./../store/cart.store";
     <div class="flex items-center gap-2 border border-black w-[300px] p-2">
       <TicketPercent class="ps-1" :size="30" />
       <div class="flex justify-between w-full text-sm">
-        <span>coupon code</span>
-        <span class="cursor-pointer font-medium">Apply</span>
+        <span></span>
+        <textarea
+          name="coupon"
+          id="textarea"
+          cols="1"
+          rows="1"
+          class="w-full py-1 text-center border-0 bg-transparent outline-none"
+          placeholder="Enter Code"
+        ></textarea>
+        <button @click="emptyCart" class="font-semibold pl-2">Apply</button>
       </div>
     </div>
   </div>
