@@ -29,7 +29,7 @@ const imageURLS = [
       <CartMenu :page="3" name="Order complete" :is-active="true" />
     </RouterLink>
   </div>
-  <div class="ms-[350px] me-[350px] pb-10">
+  <div class="ms-[350px] me-[350px] pb-20">
     <div class="card text-center shadow-2xl shadow-[#1212121A]">
       <div class="flex justify-center pt-10">
         <span class="text-2xl font-medium pb-4">Thank You!</span>
