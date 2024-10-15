@@ -7,28 +7,28 @@ import { computed, ref } from 'vue'
     <div class="flex justify-between align-middle pt-5 ps-28 pe-28 pb-20">
       <div class="logo text-xl font-semibold flex gap-10">
         <a href="#">3legant.</a>|
-        <div class="text-base font-light">
+        <div class="text-base font-light cursor-pointer">
           <span> Gift & Decoration Store</span>
         </div>
       </div>
-      <ul class="nav-links flex gap-5">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Shop</a></li>
-        <li><a href="#">Product</a></li>
-        <li><a href="#">Contact Us</a></li>
-      </ul>
+      <div class="flex gap-5 font-space-grotesk text-md">
+        <RouterLink to="/">Home</RouterLink>
+        <RouterLink to="/products">Shop</RouterLink>
+        <RouterLink to="/product">Product</RouterLink>
+        <RouterLink to="/cart">Cart</RouterLink>
+      </div>
     </div>
     <div class="flex justify-between align-middle pt-5 ps-28 pe-28 pb-5">
       <div class="flex gap-5">
         <p class="font-light">Copyright © 2023 3legant. All rights reserved</p>
-        <div>
+        <div class="cursor-pointer">
           <p>Privacy Policy</p>
         </div>
-        <div>
+        <div class="cursor-pointer">
           <p>Terms of Use</p>
         </div>
       </div>
-      <div class="flex gap-3">
+      <div class="flex gap-3 cursor-pointer">
         <Instagram />
         <Facebook />
         <Youtube />
