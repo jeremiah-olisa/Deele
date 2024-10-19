@@ -1,94 +1,139 @@
 <script setup lang="ts">
 import NavigationBar from '@/components/layout/NavigationBar.vue'
-import { Check } from 'lucide-vue-next';
-import { Banknote } from 'lucide-vue-next';
-import { TicketPercent } from 'lucide-vue-next';
-import CartMenu from '@/components/Cart/CartMenu.vue';
+import { Check } from 'lucide-vue-next'
+import { Banknote } from 'lucide-vue-next'
+import { TicketPercent } from 'lucide-vue-next'
+import CartMenu from '@/components/Cart/CartMenu.vue'
 </script>
 
-
-
 <template>
-    <section class="ps-20 pe-20">
-      <NavigationBar />
-    </section>
-    <section class="w-full h-[1700px] bg-[#FFFFFF]">
-      <div class="ml-48 pt-16">
-        <div class="px-44 ml-52 ">
-          <h1 class="text-[#000000] text-4xl font-poppins">Check Out</h1>
-        </div>
-        <!-- <div class="flex justify-center gap-24">
+  <section class="ps-20 pe-20">
+    <NavigationBar />
+  </section>
+  <section class="w-full h-[1700px] bg-[#FFFFFF]">
+    <div class="ml-48 pt-16">
+      <div class="px-44 ml-52">
+        <h1 class="text-[#000000] text-4xl font-poppins">Check Out</h1>
+      </div>
+      <!-- <div class="flex justify-center gap-24">
           <CartMenu :name= "<Check/>"  name="Shopping Cart" :is-active="true" />
           <CartMenu :page="2" name="Checkout details" :is-active="false" />
           <CartMenu :page="3" name="Order complete" :is-active="false" />
         </div> -->
-        <div class="flex flex-row gap-8 pt-10 relative px-10 ml-52">
-          <div class="flex font-inter text-sm text-[#38CB89] gap-4 border-b-2 pb-2 border-[#38CB89] ">
-            <button class="absolute -left-2 top-9 rounded-full bg-[#38CB89]  text-[#FCFCFD] p-1 w-8"><Check /></button>
-            <span> shopping cart</span>
-          </div>
-          <div class="flex gap-4 font-inter text-sm text-[#23262F] border-b-2 pb-2 border-[#23262F]">
-            <button class="-left-14 rounded-full bg-[#23262F]  text-[#FCFCFD] p-1 w-8">2</button>
-            <span>checkout details</span> 
-          </div>
-          <div class="flex gap-4 text-sm font-inter">
-            <button class="sticky rounded-full bg-[#B1B5C3] text-[#FCFCFD] p-1 w-8">3</button>
-            <span>order complete</span>  
-          </div>
-        </div> 
-        <div class=" flex flex-row gap-6 mt-16">  
-          <div class=" form ">
-            <div class=" box 1 border border-[#6C7275] rounded py-5 px-3">
-              <form action="">
-                <h4 class="font-poppins text-xl text-[#000000]">Contact Information</h4>
-                <div class="flex flex-row gap-6 mt-5">
-                  <div class="flex flex-col">
-                    <div class="mb-2 text-xs"><label for="FIRST NAME"> FIRST NAME</label> </div>
-                    <div class="h-auto pt-2 pb-2 pl-5 border rounded-md "><input type="text" placeholder="First name" required></div>
-                  </div>
-                  <div class="flex flex-col">
-                    <div class="mb-2 text-xs"><label for="LAST NAME"> LAST NAME</label> </div>
-                    <div class="h-auto pt-2 pb-2 pl-5 border rounded-md "><input type="text" placeholder="last name" required></div> 
+      <div class="flex flex-row gap-8 pt-10 relative px-10 ml-52">
+        <div class="flex font-inter text-sm text-[#38CB89] gap-4 border-b-2 pb-2 border-[#38CB89]">
+          <button class="absolute -left-2 top-9 rounded-full bg-[#38CB89] text-[#FCFCFD] p-1 w-8">
+            <Check />
+          </button>
+          <span> shopping cart</span>
+        </div>
+        <div class="flex gap-4 font-inter text-sm text-[#23262F] border-b-2 pb-2 border-[#23262F]">
+          <button class="-left-14 rounded-full bg-[#23262F] text-[#FCFCFD] p-1 w-8">2</button>
+          <span>checkout details</span>
+        </div>
+        <div class="flex gap-4 text-sm font-inter">
+          <button class="sticky rounded-full bg-[#B1B5C3] text-[#FCFCFD] p-1 w-8">3</button>
+          <span>order complete</span>
+        </div>
+      </div>
+      <div class="flex flex-row gap-6 mt-16">
+        <div class="form">
+          <div class="box 1 border border-[#6C7275] rounded py-5 px-3">
+            <form action="">
+              <h4 class="font-poppins text-xl text-[#000000]">Contact Information</h4>
+              <div class="flex flex-row gap-6 mt-5 max-sm:w-64 max-sm:h-16">
+                <div class="flex flex-col">
+                  <div class="mb-2 text-xs"><label for="FIRST NAME"> FIRST NAME</label></div>
+                  <div class="h-auto pt-2 pb-2 pl-5 border rounded-md">
+                    <input type="text" placeholder="First name" required />
                   </div>
                 </div>
                 <div class="flex flex-col">
-                  <label class="text-xs font-inter text-[#6C7275] mt-6 " for="phone number">Phone Number</label>
-                  <input class="border rounded-sm w-full h-auto pl-5 py-1" type="text" placeholder="phone number" required>
+                  <div class="mb-2 text-xs"><label for="LAST NAME"> LAST NAME</label></div>
+                  <div class="h-auto pt-2 pb-2 pl-5 border rounded-md">
+                    <input type="text" placeholder="last name" required />
+                  </div>
                 </div>
-                <div class="flex flex-col gap-4">
-                  <label class="text-xs font-inter text-[#6C7275] mt-6 " for="EMAIL ADDRESS">EMAIL ADDRESS</label>
-                  <input class="border rounded-sm w-full h-auto pl-5 py-1" type="email" placeholder="Your Email" required>
-                </div>
-              </form>
-            </div>
+              </div>
+              <div class="flex flex-col">
+                <label class="text-xs font-inter text-[#6C7275] mt-6" for="phone number"
+                  >Phone Number</label
+                >
+                <input
+                  class="border rounded-sm w-full h-auto pl-5 py-1"
+                  type="text"
+                  placeholder="phone number"
+                  required
+                />
+              </div>
+              <div class="flex flex-col gap-4">
+                <label class="text-xs font-inter text-[#6C7275] mt-6" for="EMAIL ADDRESS"
+                  >EMAIL ADDRESS</label
+                >
+                <input
+                  class="border rounded-sm w-full h-auto pl-5 py-1"
+                  type="email"
+                  placeholder="Your Email"
+                  required
+                />
+              </div>
+            </form>
+          </div>
           <div class="box 2 border border-[#6C7275] rounded py-5 px-3 mt-6">
             <form action="">
               <h4 class="font-poppins text-xl text-[#141718] mt-5">Shipping Address</h4>
               <div class="flex flex-col gap-4">
-                <label class="text-xs font-inter text-[#6C7275] mt-6 " for="STREET ADDRESS">STREET ADDRESS *</label>
-                <input class="border rounded-sm w-full h-auto pl-5 py-1" type="text" placeholder="Street Address" required>
+                <label class="text-xs font-inter text-[#6C7275] mt-6" for="STREET ADDRESS"
+                  >STREET ADDRESS *</label
+                >
+                <input
+                  class="border rounded-sm w-full h-auto pl-5 py-1"
+                  type="text"
+                  placeholder="Street Address"
+                  required
+                />
               </div>
               <div class="flex flex-col gap-4">
-                <label class="text-xs font-inter text-[#6C7275] mt-6 " for="COUNTRY">COUNTRY *</label>
-                <input class="border rounded-sm w-full h-auto pl-5 py-1" type="text" placeholder="Country" required>
+                <label class="text-xs font-inter text-[#6C7275] mt-6" for="COUNTRY"
+                  >COUNTRY *</label
+                >
+                <input
+                  class="border rounded-sm w-full h-auto pl-5 py-1"
+                  type="text"
+                  placeholder="Country"
+                  required
+                />
               </div>
               <div class="flex flex-col gap-4">
-                <label class="text-xs font-inter text-[#6C7275] mt-6 " for=" TOWN / CITY">TOWN /CITY *</label>
-                <input class="border rounded-sm w-full h-auto pl-5 py-1" type="text" placeholder="Town /City" required>
+                <label class="text-xs font-inter text-[#6C7275] mt-6" for=" TOWN / CITY"
+                  >TOWN /CITY *</label
+                >
+                <input
+                  class="border rounded-sm w-full h-auto pl-5 py-1"
+                  type="text"
+                  placeholder="Town /City"
+                  required
+                />
               </div>
               <div class="flex flex-row gap-6 mt-5">
                 <div class="flex flex-col">
-                  <div class="mb-2 text-xs"><label for="STATE"> STATE</label> </div>
-                  <div class="h-auto pt-2 pb-2 pl-5 border rounded-md "><input type="text" placeholder="State" required></div>
+                  <div class="mb-2 text-xs"><label for="STATE"> STATE</label></div>
+                  <div class="h-auto pt-2 pb-2 pl-5 border rounded-md">
+                    <input type="text" placeholder="State" required />
+                  </div>
                 </div>
                 <div class="flex flex-col">
-                  <div class="mb-2 text-xs"><label for="ZIP CODE"> ZIP CODE</label> </div>
-                  <div class="h-auto pt-2 pb-2 pl-5 border rounded-md "><input type="text" placeholder="Zip Code" required></div> 
+                  <div class="mb-2 text-xs"><label for="ZIP CODE"> ZIP CODE</label></div>
+                  <div class="h-auto pt-2 pb-2 pl-5 border rounded-md">
+                    <input type="text" placeholder="Zip Code" required />
+                  </div>
                 </div>
               </div>
               <div class="flex flex-row gap-3 mt-5">
-                <input type="checkbox" name="" id="checkout">
-                <p class="font-inter text-sm text-[#6C7275]">Use a different billing address (optional)</p>
+                <input type="checkbox" name="" id="checkout" />
+                <p class="font-inter text-sm text-[#6C7275]">
+                  Use a different billing address (optional)
+                </p>
               </div>
             </form>
           </div>
@@ -105,34 +150,50 @@ import CartMenu from '@/components/Cart/CartMenu.vue';
                   <input type="radio" name="card" id="radio">
                   <label class="font-inter text-xs"  for="Paypal">Paypal</label>
                 </div>
-                <input class="border-0 bg-transparent " type="text" name="" id="">
+                <input class="border-0 bg-transparent" type="text" name="" id="" />
                 <div class="flex flex-col">
-                  <div class="mb-2 text-xs"><label for="CARD NUMBER"> CARD NUMBER</label> </div>
-                  <div class="h-auto pt-2 pb-2 pl-5 border rounded-md "><input type="text" placeholder="1234 1234 1234" required></div> 
+                  <div class="mb-2 text-xs"><label for="CARD NUMBER"> CARD NUMBER</label></div>
+                  <div class="h-auto pt-2 pb-2 pl-5 border rounded-md">
+                    <input type="text" placeholder="1234 1234 1234" required />
+                  </div>
                 </div>
                 <div class="flex flex-row gap-6 mt-5">
                   <div class="flex flex-col">
-                    <div class="mb-2 text-xs"><label for="EXPIRATION DATE"> EXPIRATION DATE</label> </div>
-                    <div class="h-auto pt-2 pb-2 pl-5 border rounded-md "><input type="text" placeholder="MM/YY" required></div>
+                    <div class="mb-2 text-xs">
+                      <label for="EXPIRATION DATE"> EXPIRATION DATE</label>
+                    </div>
+                    <div class="h-auto pt-2 pb-2 pl-5 border rounded-md">
+                      <input type="text" placeholder="MM/YY" required />
+                    </div>
                   </div>
                   <div class="flex flex-col">
-                    <div class="mb-2 text-xs"><label for="CVC"> CVC</label> </div>
-                    <div class="h-auto pt-2 pb-2 pl-5 border rounded-md "><input type="text" placeholder="cvc Code" required></div> 
+                    <div class="mb-2 text-xs"><label for="CVC"> CVC</label></div>
+                    <div class="h-auto pt-2 pb-2 pl-5 border rounded-md">
+                      <input type="text" placeholder="cvc Code" required />
+                    </div>
                   </div>
                 </div>
               </div>
             </form>
           </div>
-          <button class=" font-inter text-xs w-[580px] h-[30px] mt-6 bg-[#141718] text-[#FFFFFF] rounded">Place Order</button>
+          <button
+            class="font-inter text-xs w-[580px] h-[30px] mt-6 bg-[#141718] text-[#FFFFFF] rounded"
+          >
+            Place Order
+          </button>
         </div>
         <div class="h-[900px] w-[376px] border rounded-md pl-6">
           <h2 class="mt-3 font-poppins text-2xl text-[#121212]">Order Summary</h2>
           <table class="mt-10">
-            <tbody class="flex flex-col gap-6 divide-y divide-slate-200 ">
+            <tbody class="flex flex-col gap-6 divide-y divide-slate-200">
               <tr class="flex gap-16">
                 <td>
-                  <div class="flex gap-4 ">
-                    <img class="w-[80px] h-[98px]" src="./../assets/images/Black_tray_table.png" alt="Tray Table">
+                  <div class="flex gap-4">
+                    <img
+                      class="w-[80px] h-[98px]"
+                      src="./../assets/images/Black_tray_table.png"
+                      alt="Tray Table"
+                    />
                     <div class="flex flex-col gap-2">
                       <span class="font-bold pb-2">Tray Table</span>
                       <span class="text-xs pb-1">Colour: Black</span>
@@ -147,12 +208,16 @@ import CartMenu from '@/components/Cart/CartMenu.vue';
                   <div>
                     <span>$38.00</span>
                   </div>
-                </td>  
+                </td>
               </tr>
-              <tr class=" flex gap-16 mt-2 ">
+              <tr class="flex gap-16 mt-2">
                 <td class="mt-4 pt-9">
-                  <div class="flex gap-4 ">
-                    <img class="w-[80px] h-[98px]" src="./../assets/images/Black_tray_table.png" alt="Tray Table">
+                  <div class="flex gap-4">
+                    <img
+                      class="w-[80px] h-[98px]"
+                      src="./../assets/images/Black_tray_table.png"
+                      alt="Tray Table"
+                    />
                     <div class="flex flex-col gap-2">
                       <span class="font-bold pb-2">Tray Table</span>
                       <span class="text-xs pb-1">Colour: Red</span>
@@ -164,15 +229,19 @@ import CartMenu from '@/components/Cart/CartMenu.vue';
                   </div>
                 </td>
                 <td>
-                  <div class="pt-12" >
+                  <div class="pt-12">
                     <span>$38.00</span>
                   </div>
-                </td> 
+                </td>
               </tr>
-              <tr class=" flex gap-16 mt-2">
+              <tr class="flex gap-16 mt-2">
                 <td class="mt-4 pt-9">
-                  <div class="flex gap-4 ">
-                    <img class="w-[80px] h-[98px]" src="./../assets/images/table_lamp2.png" alt="Table Lamp">
+                  <div class="flex gap-4">
+                    <img
+                      class="w-[80px] h-[98px]"
+                      src="./../assets/images/table_lamp2.png"
+                      alt="Table Lamp"
+                    />
                     <div class="flex flex-col gap-2">
                       <span class="font-bold pb-2">Table Lamp</span>
                       <span class="text-xs pb-1">Colour: gold</span>
@@ -188,22 +257,31 @@ import CartMenu from '@/components/Cart/CartMenu.vue';
                     <span>$39.00</span>
                   </div>
                 </td>
-              </tr>  
+              </tr>
             </tbody>
           </table>
           <div class="flex mt-6 gap-6">
-            <input class="w-[220px] h-[46px] border pl-3 rounded" type="text" placeholder="input" required>
-            <button class="w-[90px] h-[46px] border rounded-lg bg-[#141718] text-[#FFFFFF]">Apply</button>
+            <input
+              class="w-[220px] h-[46px] border pl-3 rounded"
+              type="text"
+              placeholder="input"
+              required
+            />
+            <button class="w-[90px] h-[46px] border rounded-lg bg-[#141718] text-[#FFFFFF]">
+              Apply
+            </button>
           </div>
           <div class="w-[365px] h-[208px] mt-4">
             <table>
-              <tbody class=" flex flex-col gap-5 divide-y divide-slate-200">
+              <tbody class="flex flex-col gap-5 divide-y divide-slate-200">
                 <div class="flex relative ml-4">
-                  <tr class="flex gap-10 font-inter text-sm ">
-                    <td class="pt-6 pl-5 text-[#141718]"><TicketPercent class="absolute -left-3 " /> JenkateMW</td>
-                    <td class="pt-6 text-[#38CB89] ">-$25.00 [Remove]</td>
+                  <tr class="flex gap-10 font-inter text-sm">
+                    <td class="pt-6 pl-5 text-[#141718]">
+                      <TicketPercent class="absolute -left-3" /> JenkateMW
+                    </td>
+                    <td class="pt-6 text-[#38CB89]">-$25.00 [Remove]</td>
                   </tr>
-                </div> 
+                </div>
                 <tr class="flex pt-1 gap-36 font-inter text-[#141718] text-sm">
                   <td class="pt-2">Shipping</td>
                   <td class="pt-2">Free</td>
