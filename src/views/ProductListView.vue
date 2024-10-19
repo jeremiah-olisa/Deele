@@ -4,19 +4,13 @@ import ProductList from '@/components/CartProduct/ProductList.vue'
 import NewsletterComponent from '@/components/layout/NewsletterComponent.vue'
 import ShopBannerComponent from '@/components/Home/ShopBannerComponent.vue'
 // import ProductRatingComponent from '@/components/Shop/ProductRatingComponent.vue';
-import { Grid3x3 } from 'lucide-vue-next'
+import { Grid3x3, LoaderCircle } from 'lucide-vue-next'
 import { LayoutGrid, StretchVertical, StretchHorizontal } from 'lucide-vue-next'
-// import { StretchVertical } from 'lucide-vue-next';
-// import { StretchHorizontal } from 'lucide-vue-next';
-import { ref } from 'vue'
+import { useProductsStore } from '@/store/products.store'
 
-const mainImageIndex = ref(0)
-const imageURLS = [
-  'https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/63/257805/1.jpg?2972',
-  'https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/72/2066921/1.jpg?9606',
-  'https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/83/1412401/1.jpg?9606',
-  'https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/08/2799081/1.jpg?9422'
-]
+const { products, status, getAllProducts } = useProductsStore()
+
+getAllProducts()
 </script>
 
 <template>
@@ -68,26 +62,21 @@ const imageURLS = [
       </div>
     </div>
     <div class="productList max-sm:mt-72">
-      <div class="First_row flex w-[1120px] h-[433px] gap-6">
-        <ProductList />
-        <ProductList />
-        <ProductList />
-        <ProductList />
+      <div v-if="status == 'success'" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <ProductList
+          v-for="product in products"
+          :title="product.title"
+          :category="product.category"
+          :discount="234"
+          :image="product.image"
+          :price="product.price"
+          :rating="3"
+          :key="product.id"
+        />
       </div>
-    </div>
-
-    <div class="second_row flex w-[1120px] h-[433px] gap-6">
-      <ProductList />
-      <ProductList />
-      <ProductList />
-      <ProductList />
-    </div>
-
-    <div class="third_row flex w-[1120px] h-[433px] gap-6">
-      <ProductList />
-      <ProductList />
-      <ProductList />
-      <ProductList />
+      <div v-if="status == 'loading'" class="flex justify-center items-center w-full">
+        <LoaderCircle class="animate-spin" />
+      </div>
     </div>
     <button
       class="flex py-1 px-6 border rounded-3xl text-[#141718] border-gray-500 ml-96 mt-10 mb-20"
