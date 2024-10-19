@@ -1,7 +1,7 @@
 <script setup lang="ts">
 </script>
 <template>
-    <div class="flex justify-center items-center flex-col gap-6">
+    <div class="flex justify-center items-center flex-col gap-6 ">
         <div class="flex justify-center gap-4 mt-28 font-[inter] text-sm">
             <div>Home ></div>
             <div>Shop</div>

@@ -2,7 +2,7 @@
 import { ArrowLeft, ArrowRight, Mail } from 'lucide-vue-next'
 </script>
 <template>
-  <div class="new-arrivals relative bg-[url('/images/footer-bg.png')]">
+  <div class="new-arrivals relative bg-[url('/images/footer-bg.png')] max-sm:">
     <img src="/images/footer-bg.png" alt="Image" class="w-full h-auto" />
     <div class="absolute inset-0 flex items-center justify-center">
       <div class="text-center space-y-1 max-md:text-xs md:text-xs">
