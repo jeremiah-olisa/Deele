@@ -57,7 +57,7 @@ const next = () => {
         <li><a href="#" class="active font-normal">Product</a></li>
       </ul>
     </div>
-    <div class="tray-table grid grid-cols-2 pt-5 max-sm:grid-cols-1">
+    <div class="tray-table grid grid-cols-2 ps-20 pe-24 pt-5 max-sm:grid-cols-1 max-sm:pe-10">
       <div class="table-page relative w-11/12">
         <button
           @click="prev"
@@ -142,32 +142,40 @@ const next = () => {
             <h5>Choose Color <span class="pl-1">></span></h5>
             <span>Black</span>
           </div>
-          <div class="small-table inline-grid grid-cols-4 gap-3 pt-5 w-full max-md:pr-5">
-            <div class="border">
-              <img :src="imageURLS[0]" alt="" class="w-full md:w-[262px] h-auto" />
+
+          <div class="max-sm:ps-20">
+            <div class="small-table inline-grid grid-cols-4 gap-3 pt-5 w-80 max-md:pr-5">
+              <div class="border">
+                <img :src="imageURLS[0]" alt="" class="w-full md:w-[262px] h-auto" />
+              </div>
+              <div><img :src="imageURLS[0]" alt="" class="w-full md:w-[262px] h-auto" /></div>
+              <div><img :src="imageURLS[0]" alt="" class="w-full md:w-[262px] h-auto" /></div>
+              <div><img :src="imageURLS[0]" alt="" class="w-full md:w-[262px] h-auto" /></div>
             </div>
             <div><img :src="imageURLS[0]" alt="" class="w-full md:w-[262px] h-auto" /></div>
             <div><img :src="imageURLS[0]" alt="" class="w-full md:w-[262px] h-auto" /></div>
             <div><img :src="imageURLS[0]" alt="" class="w-full md:w-[262px] h-auto" /></div>
           </div>
         </div>
-        <div class="buttons flex gap-4 pt-12">
+        <div class="flex gap-4 pt-12 max-md:pt-3 max-md:text-xs max-sm:ps-20">
           <ProductQuantityBtn />
-          <button
-            class="flex w-full justify-center items-center gap-1 border border-solid rounded-md border-black md:text-sm"
-          >
-            <Heart :size="23" class="max-md:size-4 md:size-5" /><span class="font-semibold"
-              >Wishlist</span
+          <div>
+            <button
+              class="flex gap-1 border border-solid rounded-md border-black p-1 pl-32 pr-32 max-md:pl-[70px] max-md:pr-[70px] md:pr-[100px] md:pl-[100px] lg:pr-[123px] lg:pl-[123px] md:text-sm"
             >
-          </button>
+              <Heart :size="23" class="max-md:size-4 md:size-5" /><span class="font-semibold"
+                >Wishlist</span
+              >
+            </button>
+          </div>
         </div>
-        <div class="pt-4 max-md:text-xs md:text-sm">
+        <div class="pt-4 max-md:text-xs max-sm:ps-20 md:text-sm">
           <button
-            class="border w-full border-solid rounded-md border-black text-white bg-black p-1 flex items-center justify-center"
+            class="border border-solid rounded-md border-black text-white bg-black p-1 pl-[220px] pr-[203px] max-md:flex items-center max-md:pl-[135px] max-md:pr-[135px] md:pr-[165px] md:pl-[165px]"
           >
             Add to Cart
           </button>
-          <div class="flex gap-5 pt-16 font-thin text-sm max-md:text-xs max-sm:pt-6 md:pt-6">
+          <div class="flex gap-5 pt-16 font-thin text-sm">
             <p>SKU</p>
             <p>1117</p>
           </div>
@@ -179,14 +187,14 @@ const next = () => {
       </div>
     </div>
     <div class="new-arrivals pt-10 pb-20">
-      <div class="flex justify-between ps-20 pe-32 max-md:text-sm max-md:pe-7 md:text-sm md:pe-7">
+      <div class="flex justify-between ps-20 pe-32">
         <h1 class="font-bold">You might also like</h1>
         <div class="flex gap-0.5 font-extralight text-sm">
           <p>More Products</p>
           <img src="./../assets/images/right-arrow.png" alt="" class="w-4" />
         </div>
       </div>
-      <div class="arrivals-cards flex overflow-auto gap-6 pt-8 px-4 md:px-8">
+      <div class="arrivals-cards flex gap-6 pt-8 ps-20 max-md:pe-10 md:pe-10">
         <ProductDisplayComponent :rating="2" :tag="'New'" :percentage="50" :discount="200" />
         <ProductDisplayComponent :rating="3" :tag="'New'" :percentage="50" :discount="200" />
         <ProductDisplayComponent :rating="4" :tag="'New'" :percentage="50" :discount="200" />
