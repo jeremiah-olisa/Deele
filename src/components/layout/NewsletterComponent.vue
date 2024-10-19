@@ -5,13 +5,13 @@ import { ArrowLeft, ArrowRight, Mail } from 'lucide-vue-next'
   <div class="new-arrivals relative bg-[url('/images/footer-bg.png')]">
     <img src="/images/footer-bg.png" alt="Image" class="w-full h-auto" />
     <div class="absolute inset-0 flex items-center justify-center">
-      <div class="text-center space-y-1">
+      <div class="text-center space-y-1 max-md:text-xs md:text-xs">
         <h1 class="text-2xl">Join Our Newsletter</h1>
         <p class="">Sign up for deals, new products and promotions.</p>
-        <div class="flex items-center justify-center">
+        <div class="flex items-center justify-center max-md:text-xs">
           <form class="pt-8 border-b border-gray-400">
             <div class="flex items-center justify-between">
-              <Mail color="gray" />
+              <Mail color="gray" class="max-md:size-3 md:size-4" />
               <input
                 type="email"
                 id="email"

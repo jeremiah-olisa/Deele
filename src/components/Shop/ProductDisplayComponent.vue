@@ -15,17 +15,17 @@ const subtotal = computed(() => props.price * quantity.value)
 </script>
 <template>
   <div class="relative">
-    <div class="flex flex-col justify-start items-start gap-1 absolute mt-3 pl-3">
+    <div class="flex flex-col justify-start items-start gap-1 absolute mt-3 pl-3 max-md:pl-1">
       <button
         v-if="tag"
-        class="bg-[#FFFFFF] w-[60px] h-6 py-0 rounded font-[inter] text-base border"
+        class="bg-[#FFFFFF] w-[60px] h-6 py-0 rounded font-[inter] text-base border max-md:w-[35px] max-md:text-xs max-md:px-0"
         type="button"
       >
         {{ tag }}
       </button>
       <button
         v-if="percentage"
-        class="bg-[#38CB89] w-[60px] h-6 py-0 px-3.5 rounded font-[inter] text-base"
+        class="bg-[#38CB89] w-[60px] h-6 py-0 px-3.5 rounded font-[inter] text-base max-md:w-[35px] max-md:text-xs max-md:px-0"
         type="button"
       >
         -{{ percentage }}%
@@ -37,10 +37,15 @@ const subtotal = computed(() => props.price * quantity.value)
       class="w-full md:w-[262px] h-auto"
     />
     <div class="flex">
-      <Star class="pt-1" :size="16" v-for="i in Array.from({ length: rating })" :key="i" />
+      <Star
+        class="pt-1 max-md:size-3"
+        :size="16"
+        v-for="i in Array.from({ length: rating })"
+        :key="i"
+      />
     </div>
-    <h3>Loveseat Sofa</h3>
-    <p class="font-semibold pt-1 text-sm">
+    <h3 class="max-md:text-xs">Loveseat Sofa</h3>
+    <p class="font-semibold pt-1 text-sm max-md:text-xs">
       $199.00
       <span v-if="discount" class="font-extralight text-xs line-through pl-1">
         ${{ discount.toFixed(2) }}
