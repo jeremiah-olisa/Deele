@@ -38,10 +38,10 @@ import CartMenu from '@/components/Cart/CartMenu.vue'
       </div>
       <div class="flex flex-row gap-6 mt-16">
         <div class="form">
-          <div class="box 1 border border-[#6C7275] rounded py-5 px-3">
+          <div class="box 1 border border-[#6C7275] rounded py-5 px-3 max-sm:w-72 max-sm:h-80">
             <form action="">
               <h4 class="font-poppins text-xl text-[#000000]">Contact Information</h4>
-              <div class="flex flex-row gap-6 mt-5 max-sm:w-64 max-sm:h-16">
+              <div class="flex flex-row gap-6 mt-5 max-sm:w-64 max-sm:h-16 ">
                 <div class="flex flex-col">
                   <div class="mb-2 text-xs"><label for="FIRST NAME"> FIRST NAME</label></div>
                   <div class="h-auto pt-2 pb-2 pl-5 border rounded-md">
