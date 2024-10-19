@@ -8,7 +8,7 @@ const isVisible = ref(true)
 <template>
   <div
     v-if="isVisible === true"
-    class="relative flex p-2 w-full justify-center items-center bg-dark text-white text-sm max-md:w-[650px] sm:w-full max-md:text-xs max-lg:w-[950px]"
+    class="relative flex p-2 w-full justify-center items-center bg-dark text-white text-sm sm:w-full max-md:text-xs"
   >
     <div class="flex-gap-3 max-sm:text-xs max-md:text-xs">
       <span class="flex-gap-3">

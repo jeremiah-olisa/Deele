@@ -14,7 +14,7 @@ const routes: RouteRecordRaw[] = [
   { path: '/cart', component: CartDetailView },
   { path: '/checkout', component: CheckOutDetailsView},
   { path: '/:pathMatch(.*)*', component: NotFoundVIew },
-  { path: '/CartOrder', component: CartOrderView },
+  { path: '/cart-order', component: CartOrderView },
 
 ]
 

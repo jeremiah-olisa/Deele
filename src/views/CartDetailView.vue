@@ -16,11 +16,9 @@ import { cartItems, emptyCart, subTotal } from './../store/cart.store'
     <h1 class="text-4xl font-medium">Cart</h1>
   </div>
   <div class="flex justify-center gap-24">
-    <CartMenu :page="1" name="Shopping Cart" :is-active="true" />
-    <RouterLink to="/checkout">
-      <CartMenu :page="2" name="Checkout details" :is-active="false" />
-    </RouterLink>
-    <CartMenu :page="3" name="Order complete" :is-active="false" />
+    <CartMenu to="/cart" :page="1" name="Shopping Cart" status="current" />
+    <CartMenu to="/checkout" :page="2" name="Checkout details" status="pending" />
+    <CartMenu :page="3" name="Order complete" status="pending" />
   </div>
 
   <div class="flex justify-center gap-20 pt-10 pb-20">

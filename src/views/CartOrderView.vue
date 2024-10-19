@@ -22,12 +22,10 @@ const imageURLS = [
   <div class="text-center p-10">
     <h1 class="text-4xl font-medium">Complete!</h1>
   </div>
-  <div class="flex justify-center gap-24 pb-6">
-    <CartMenu :page="1" name="Shopping Cart" :is-active="false" />
-    <CartMenu :page="2" name="Checkout details" :is-active="false" />
-    <RouterLink to="#">
-      <CartMenu :page="3" name="Order complete" :is-active="true" />
-    </RouterLink>
+  <div class="flex flex-row items-center justify-center gap-24">
+    <CartMenu to="/cart" :page="1" name="Shopping Cart" status="done" />
+    <CartMenu to="/checkout" :page="2" name="Checkout details" status="done" />
+    <CartMenu to="/cart-order" :page="3" name="Order complete" status="current" />
   </div>
   <div class="ms-[350px] me-[350px] pb-20">
     <div class="card text-center shadow-2xl shadow-[#1212121A]">

@@ -7,41 +7,23 @@ import CartMenu from '@/components/Cart/CartMenu.vue'
 </script>
 
 <template>
-  <section class="ps-20 pe-20">
+  <section class="px-20">
     <NavigationBar />
   </section>
-  <section class="w-full h-[1700px] bg-[#FFFFFF]">
-    <div class="ml-48 pt-16">
-      <div class="px-44 ml-52">
-        <h1 class="text-[#000000] text-4xl font-poppins">Check Out</h1>
+  <section class="flex items-center justify-center w-full px-16 xl:px-0 bg-[#FFFFFF]">
+    <div class="flex flex-col gap-4">
+      <h1 class="text-[#000000] text-center text-4xl font-poppins">Check Out</h1>
+      <div class="flex flex-row items-center justify-center gap-24">
+        <CartMenu name="Shopping Cart" to="/cart" :page="1" status="done" />
+        <CartMenu name="Checkout Details" :page="2" status="current" to="/checkout" />
+        <CartMenu to="cart-order" name="Order Complete" :page="3" status="pending" />
       </div>
-      <!-- <div class="flex justify-center gap-24">
-          <CartMenu :name= "<Check/>"  name="Shopping Cart" :is-active="true" />
-          <CartMenu :page="2" name="Checkout details" :is-active="false" />
-          <CartMenu :page="3" name="Order complete" :is-active="false" />
-        </div> -->
-      <div class="flex flex-row gap-8 pt-10 relative px-10 ml-52">
-        <div class="flex font-inter text-sm text-[#38CB89] gap-4 border-b-2 pb-2 border-[#38CB89]">
-          <button class="absolute -left-2 top-9 rounded-full bg-[#38CB89] text-[#FCFCFD] p-1 w-8">
-            <Check />
-          </button>
-          <span> shopping cart</span>
-        </div>
-        <div class="flex gap-4 font-inter text-sm text-[#23262F] border-b-2 pb-2 border-[#23262F]">
-          <button class="-left-14 rounded-full bg-[#23262F] text-[#FCFCFD] p-1 w-8">2</button>
-          <span>checkout details</span>
-        </div>
-        <div class="flex gap-4 text-sm font-inter">
-          <button class="sticky rounded-full bg-[#B1B5C3] text-[#FCFCFD] p-1 w-8">3</button>
-          <span>order complete</span>
-        </div>
-      </div>
-      <div class="flex flex-row gap-6 mt-16">
+      <div class="flex max-sm:flex-col flex-row gap-6 my-16 w-full">
         <div class="form">
-          <div class="box 1 border border-[#6C7275] rounded py-5 px-3 max-sm:w-72 max-sm:h-80">
+          <div class="box 1 border border-[#6C7275] rounded py-5 px-3">
             <form action="">
               <h4 class="font-poppins text-xl text-[#000000]">Contact Information</h4>
-              <div class="flex flex-row gap-6 mt-5 max-sm:w-64 max-sm:h-16 ">
+              <div class="flex max-md:flex-col gap-6 mt-5">
                 <div class="flex flex-col">
                   <div class="mb-2 text-xs"><label for="FIRST NAME"> FIRST NAME</label></div>
                   <div class="h-auto pt-2 pb-2 pl-5 border rounded-md">
@@ -115,7 +97,7 @@ import CartMenu from '@/components/Cart/CartMenu.vue'
                   required
                 />
               </div>
-              <div class="flex flex-row gap-6 mt-5">
+              <div class="flex max-md:flex-col gap-6 mt-5">
                 <div class="flex flex-col">
                   <div class="mb-2 text-xs"><label for="STATE"> STATE</label></div>
                   <div class="h-auto pt-2 pb-2 pl-5 border rounded-md">
@@ -165,14 +147,15 @@ import CartMenu from '@/components/Cart/CartMenu.vue'
                     <input type="text" placeholder="1234 1234 1234" required />
                   </div>
                 </div>
-                <div class="flex flex-row gap-6 mt-5">
-                  <div class="flex flex-col">
-                    <div class="mb-2 text-xs">
-                      <label for="EXPIRATION DATE"> EXPIRATION DATE</label>
-                    </div>
-                    <div class="h-auto pt-2 pb-2 pl-5 border rounded-md">
-                      <input type="text" placeholder="MM/YY" required />
-                    </div>
+                <div class="flex max-md:flex-col gap-6 mt-5">
+                  <div class="flex text-xs gap-2 flex-col">
+                    <label class="" for="EXPIRATION DATE"> EXPIRATION DATE</label>
+                    <input
+                      class="h-auto pt-2 pb-2 pl-5 border rounded-md"
+                      type="text"
+                      placeholder="MM/YY"
+                      required
+                    />
                   </div>
                   <div class="flex flex-col">
                     <div class="mb-2 text-xs"><label for="CVC"> CVC</label></div>
@@ -184,13 +167,11 @@ import CartMenu from '@/components/Cart/CartMenu.vue'
               </div>
             </form>
           </div>
-          <button
-            class="font-inter text-xs w-[580px] h-[30px] mt-6 bg-[#141718] text-[#FFFFFF] rounded"
-          >
+          <button class="font-inter w-full h-10 mt-6 bg-[#141718] text-[#FFFFFF] rounded">
             Place Order
           </button>
         </div>
-        <div class="h-[900px] w-[376px] border rounded-md pl-6">
+        <div class="border rounded-md pl-6">
           <h2 class="mt-3 font-poppins text-2xl text-[#121212]">Order Summary</h2>
           <table class="mt-10">
             <tbody class="flex flex-col gap-6 divide-y divide-slate-200">
@@ -270,7 +251,7 @@ import CartMenu from '@/components/Cart/CartMenu.vue'
           </table>
           <div class="flex mt-6 gap-6">
             <input
-              class="w-[220px] h-[46px] border pl-3 rounded"
+              class="w-full h-[46px] border pl-3 rounded"
               type="text"
               placeholder="input"
               required
@@ -282,14 +263,12 @@ import CartMenu from '@/components/Cart/CartMenu.vue'
           <div class="w-[365px] h-[208px] mt-4">
             <table>
               <tbody class="flex flex-col gap-5 divide-y divide-slate-200">
-                <div class="flex relative ml-4">
-                  <tr class="flex gap-10 font-inter text-sm">
-                    <td class="pt-6 pl-5 text-[#141718]">
-                      <TicketPercent class="absolute -left-3" /> JenkateMW
-                    </td>
-                    <td class="pt-6 text-[#38CB89]">-$25.00 [Remove]</td>
-                  </tr>
-                </div>
+                <tr class="flex gap-10 relative ml-4 font-inter text-sm">
+                  <td class="pt-6 pl-5 text-[#141718]">
+                    <TicketPercent class="absolute -left-3" /> JenkateMW
+                  </td>
+                  <td class="pt-6 text-[#38CB89]">-$25.00 [Remove]</td>
+                </tr>
                 <tr class="flex pt-1 gap-36 font-inter text-[#141718] text-sm">
                   <td class="pt-2">Shipping</td>
                   <td class="pt-2">Free</td>
