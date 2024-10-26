@@ -152,9 +152,6 @@ const next = () => {
               <div><img :src="imageURLS[0]" alt="" class="w-full md:w-[262px] h-auto" /></div>
               <div><img :src="imageURLS[0]" alt="" class="w-full md:w-[262px] h-auto" /></div>
             </div>
-            <div><img :src="imageURLS[0]" alt="" class="w-full md:w-[262px] h-auto" /></div>
-            <div><img :src="imageURLS[0]" alt="" class="w-full md:w-[262px] h-auto" /></div>
-            <div><img :src="imageURLS[0]" alt="" class="w-full md:w-[262px] h-auto" /></div>
           </div>
         </div>
         <div class="flex gap-4 pt-12 max-md:pt-3 max-md:text-xs max-sm:ps-20">

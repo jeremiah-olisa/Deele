@@ -5,7 +5,7 @@ import { computed, ref } from 'vue'
 <template>
   <footer class="bg-black text-white max-md:text-xs md:text-sm">
     <div
-      class="flex justify-between align-middle pt-5 ps-28 pe-28 pb-20 max-md:ps-10 max-md:pe-10 max-md:pb-10 md:ps-10 md:pe-10 md:pb-10"
+      class="flex justify-between align-middle pt-5 px-28 pb-20 max-md:ps-10 max-md:pe-10 max-md:pb-10 md:ps-10 md:pe-10 md:pb-10 max-sm:gap-10"
     >
       <div class="logo text-xl font-semibold flex gap-10">
         <a href="#">3legant.</a>|
@@ -20,9 +20,7 @@ import { computed, ref } from 'vue'
         <RouterLink to="/cart">Cart</RouterLink>
       </div>
     </div>
-    <div
-      class="flex justify-between align-middle pt-5 ps-28 pe-28 pb-5 max-md:ps-10 max-md:pe-10 md:ps-10 md:pe-10"
-    >
+    <div class="flex justify-between align-middle pt-5 ps-28 pe-28 pb-5 max-md:px-10 md:px-10">
       <div class="flex gap-5">
         <p class="font-light">Copyright © 2023 3legant. All rights reserved</p>
         <div class="cursor-pointer">

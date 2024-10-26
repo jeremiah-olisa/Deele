@@ -4,7 +4,7 @@ import { CircleUserRound, Search, ShoppingBag } from 'lucide-vue-next'
 
 <template>
   <div class="flex max-sm:[640px]:flex-col w-full justify-between items-center py-[18px] gap-y-2">
-    <h3 class="font-poppins text-2xl font-medium">Deele</h3>
+    <h3 class="font-poppins text-2xl font-medium max-md:pe-10">Deele</h3>
     <div class="flex gap-5 font-space-grotesk text-sm">
       <RouterLink to="/">Home</RouterLink>
       <RouterLink to="/products">Shop</RouterLink>

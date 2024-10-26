@@ -22,7 +22,7 @@ defineProps<{
       <button
         v-if="page && status != 'done'"
         :class="[
-          'rounded-full text-white p-1 w-8',
+          'rounded-full text-white p-1 w-8 max-sm:',
           {
             'bg-[#000]': status == 'current',
             'bg-[#23262F]': status == 'current',

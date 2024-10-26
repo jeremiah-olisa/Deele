@@ -5,6 +5,10 @@ import { ref, computed, defineProps, withDefaults, watch } from 'vue'
 
 const props = withDefaults(
   defineProps<{
+    id: number
+    userid: number
+    date: number
+    products: string
     item: ICartItem
     symbol?: string
   }>(),
@@ -33,7 +37,11 @@ watch([quantity], () => updateCartQuantity(props.item.id, quantity.value))
     <tr>
       <td>
         <div class="flex justify-start pt-10">
-          <img :src="item.imageURL" alt="" class="w-full md:w-[100px] h-auto" />
+          <img
+            :src="item.imageURL"
+            alt=""
+            class="w-full md:w-[100px] h-auto max-sm:w-[110px] max-md:w-[100px]"
+          />
           <div class="flex flex-col">
             <span class="bg-slate-800 text-white px-1 py-1 rounded-sm text-sm w-5">{{
               item.id
