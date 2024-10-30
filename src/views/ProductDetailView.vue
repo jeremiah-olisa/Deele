@@ -6,6 +6,8 @@ import ProductReviewComponent from '@/components/Shop/ProductReviewComponent.vue
 import ProductQuantityBtn from '@/components/Shop/ProductQuantityBtn.vue'
 import { ArrowLeft, ArrowRight, Heart } from 'lucide-vue-next'
 import { computed, ref } from 'vue'
+import { useGetProductItem } from '@/store/productList.store'
+import { useRoute } from 'vue-router'
 
 const mainImageIndex = ref(0)
 const imageURLS = [
@@ -40,6 +42,11 @@ const next = () => {
   if (mainImageIndex.value < imageURLS.length - 1) mainImageIndex.value = mainImageIndex.value + 1
   else mainImageIndex.value = 0
 }
+
+const route = useRoute()
+const { product, status, getASingleProduct } = useGetProductItem()
+
+getASingleProduct(Number(route.params.productId))
 </script>
 
 <template>
@@ -71,8 +78,8 @@ const next = () => {
         >
           <ArrowRight />
         </button>
-        <img :src="imageURLS[mainImageIndex]" alt="" />
-        <div class="sub-images pt-6 grid grid-cols-3 gap-3">
+        <img :src="product?.image" alt="" />
+        <!-- <div class="sub-images pt-6 grid grid-cols-3 gap-3">
           <img
             v-for="(image, index) in restImages"
             :src="image"
@@ -80,15 +87,15 @@ const next = () => {
             class="h-auto"
             :key="index"
           />
-        </div>
+        </div> -->
         <div
           class="flex flex-col justify-start items-start gap-1 absolute top-3 left-3 max-sm:pt-8"
         >
           <button
-            class="bg-[#FFFFFF] w-[60px] h-6 py-0 px-3.5 rounded font-[inter] text-base border max-md:w-[50px] max-md:text-xs md:text-xs md:w-[55px]"
+            class="bg-[#FFFFFF] w-[80px] h-6 py-0 px-3.5 rounded font-[inter] text-base border max-md:w-[50px] max-md:text-xs md:text-xs md:w-[55px]"
             type="button"
           >
-            New
+            {{ product?.category }}
           </button>
           <button
             class="bg-[#38CB89] w-[60px] h-6 py-0 px-3.5 rounded font-[inter] text-base max-md:w-[50px] max-md:text-xs md:text-xs md:w-[55px]"
@@ -101,18 +108,18 @@ const next = () => {
       <div class="text-page pe-4 max-sm:pt-10">
         <div class="inline-grid grid-cols-2 gap-2">
           <ProductReviewComponent :rating="5" />
-          <h6 class="text-xs max-md:pt-0.5">11 Reviews</h6>
+          <!-- <h6 class="text-xs max-md:pt-0.5">11 Reviews</h6> -->
         </div>
-        <h1 class="text-2xl font-semibold pt-4 max-md:text-xl">Tray Table</h1>
+        <h1 class="text-2xl font-semibold pt-4 max-md:text-xl">{{ product?.title }}</h1>
         <p class="font-extralight break-normal max-md:text-sm">
-          Buy one or buy a few and make every space where you sit more convenient. Light and easy to
-          move around with removable tray top, handy for serving snacks.
-        </p>
+          {{ product?.description }}
+          <!-- Buy one or buy a few and make every space where you sit more convenient. Light and easy to
+          move around with removable tray top, handy for serving snacks. -->
+        </p>{{ product?.price }}
         <p class="font-semibold pt-2 text-xl">
-          $199.00
           <span class="font-extralight text-base line-through pl-1">$400.00</span>
         </p>
-        <div class="offers pt-12 max-md:pt-4">
+        <!-- <div class="offers pt-12 max-md:pt-4">
           <p class="pb-1 max-md:text-md">Offers expires in:</p>
           <div class="inline-grid grid-cols-4 text-center gap-2">
             <div>
@@ -132,25 +139,25 @@ const next = () => {
               <span class="text-xs">Seconds</span>
             </div>
           </div>
-        </div>
-        <div class="measurement pt-12 max-md:pt-4 max-md:text-xs">
+        </div> -->
+        <!-- <div class="measurement pt-12 max-md:pt-4 max-md:text-xs">
           <h6>Measurements</h6>
           <p>17 1/2x20 5/8 "</p>
-        </div>
-        <div class="colour pt-8 max-md:pt-4 max-md:text-xs">
+        </div> -->
+        <!-- <div class="colour pt-8 max-md:pt-4 max-md:text-xs">
           <div class="max-sm:flex gap-3">
             <h5>Choose Color <span class="pl-1">></span></h5>
             <span>Black</span>
           </div>
           <div class="small-table inline-grid grid-cols-4 gap-3 pt-5 w-full max-md:pr-5">
             <div class="border">
-              <img :src="imageURLS[0]" alt="" class="w-full md:w-[262px] h-auto" />
+              <img :src="product?.image" alt="" class="w-full md:w-[262px] h-auto" />
             </div>
-            <div><img :src="imageURLS[0]" alt="" class="w-full md:w-[262px] h-auto" /></div>
-            <div><img :src="imageURLS[0]" alt="" class="w-full md:w-[262px] h-auto" /></div>
-            <div><img :src="imageURLS[0]" alt="" class="w-full md:w-[262px] h-auto" /></div>
+            <div><img :src="product?.image" alt="" class="w-full md:w-[262px] h-auto" /></div>
+            <div><img :src="product?.image" alt="" class="w-full md:w-[262px] h-auto" /></div>
+            <div><img :src="product?.image" alt="" class="w-full md:w-[262px] h-auto" /></div>
           </div>
-        </div>
+        </div> -->
         <div class="buttons flex gap-4 pt-12">
           <ProductQuantityBtn />
           <button
@@ -178,7 +185,7 @@ const next = () => {
         </div>
       </div>
     </div>
-    <div class="new-arrivals pt-10 pb-20">
+    <!-- <div class="new-arrivals pt-10 pb-20">
       <div class="flex justify-between ps-20 pe-32 max-md:text-sm max-md:pe-7 md:text-sm md:pe-7">
         <h1 class="font-bold">You might also like</h1>
         <div class="flex gap-0.5 font-extralight text-sm">
@@ -187,13 +194,48 @@ const next = () => {
         </div>
       </div>
       <div class="arrivals-cards flex overflow-auto gap-6 pt-8 px-4 md:px-8">
-        <ProductDisplayComponent :rating="2" :tag="'New'" :percentage="50" :discount="200" />
-        <ProductDisplayComponent :rating="3" :tag="'New'" :percentage="50" :discount="200" />
-        <ProductDisplayComponent :rating="4" :tag="'New'" :percentage="50" :discount="200" />
-        <ProductDisplayComponent :rating="5" :tag="'New'" :percentage="50" :discount="200" />
-        <ProductDisplayComponent :rating="6" :tag="'New'" :percentage="50" :discount="200" />
+        <ProductDisplayComponent
+          :rating="2"
+          :tag="'New'"
+          :percentage="50"
+          :discount="200"
+          :image="''"
+          :price="Number(product?.price)"
+        />
+        <ProductDisplayComponent
+          :rating="3"
+          :tag="'New'"
+          :percentage="50"
+          :discount="200"
+          :image="''"
+          :price="Number(product?.price)"
+        />
+        <ProductDisplayComponent
+          :rating="4"
+          :tag="'New'"
+          :percentage="50"
+          :discount="200"
+          :image="''"
+          :price="Number(product?.price)"
+        />
+        <ProductDisplayComponent
+          :rating="5"
+          :tag="'New'"
+          :percentage="50"
+          :discount="200"
+          :image="''"
+          :price="Number(product?.price)"
+        />
+        <ProductDisplayComponent
+          :rating="6"
+          :tag="'New'"
+          :percentage="50"
+          :discount="200"
+          :image="''"
+          :price="Number(product?.price)"
+        />
       </div>
-    </div>
+    </div> -->
   </div>
   <section><NewsletterComponent /></section>
 </template>

@@ -9,12 +9,12 @@ import CheckOutDetailsView from '@/views/CheckOutDetailsView.vue'
 
 const routes: RouteRecordRaw[] = [
   { path: '/', component: HomeView },
-  { path: '/product', component: ProductDetailView },
+  { path: '/product/:productId', component: ProductDetailView },
   { path: '/products', component: ProductListView },
   { path: '/cart', component: CartDetailView },
   { path: '/checkout', component: CheckOutDetailsView},
-  { path: '/:pathMatch(.*)*', component: NotFoundVIew },
   { path: '/cart-order', component: CartOrderView },
+  { path: '/:pathMatch(.*)*', component: NotFoundVIew },
 
 ]
 

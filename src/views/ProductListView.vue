@@ -71,6 +71,7 @@ getAllProducts()
           :image="product.image"
           :price="product.price"
           :rating="3"
+          :id="product.id"
           :key="product.id"
         />
       </div>

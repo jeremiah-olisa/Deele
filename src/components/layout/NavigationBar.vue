@@ -8,7 +8,7 @@ import { CircleUserRound, Search, ShoppingBag } from 'lucide-vue-next'
     <div class="flex gap-5 font-space-grotesk text-sm">
       <RouterLink to="/">Home</RouterLink>
       <RouterLink to="/products">Shop</RouterLink>
-      <RouterLink to="/product">Product</RouterLink>
+      <!-- <RouterLink to="/product">Product</RouterLink> -->
       <RouterLink to="/cart">Cart</RouterLink>
       <RouterLink to="/checkout">Checkout</RouterLink>
     </div>

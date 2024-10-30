@@ -6,7 +6,9 @@ const props = defineProps<{
   rating: number
   discount?: number
   tag: string
+  price: number
   percentage?: number
+  image: string
 }>()
 
 const quantity = ref(2)
@@ -32,7 +34,7 @@ const subtotal = computed(() => props.price * quantity.value)
       </button>
     </div>
     <img
-      :src="'https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/72/2066921/1.jpg?9606'"
+      :src="image" 
       alt="Product image"
       class="w-full md:w-[262px] h-auto"
     />
@@ -46,7 +48,7 @@ const subtotal = computed(() => props.price * quantity.value)
     </div>
     <h3 class="max-md:text-xs">Loveseat Sofa</h3>
     <p class="font-semibold pt-1 text-sm max-md:text-xs">
-      $199.00
+      {{price }}
       <span v-if="discount" class="font-extralight text-xs line-through pl-1">
         ${{ discount.toFixed(2) }}
       </span>

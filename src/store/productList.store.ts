@@ -3,8 +3,8 @@ import { delay } from '@/lib/utils'
 import { ref } from 'vue'
 import type { ApiFetchStatus, IProductListItem } from './products.store'
 
-export const getProductsItem = () => {
-  const products = ref<IProductListItem | null>(null)
+export const useGetProductItem = () => {
+  const product = ref<IProductListItem | null>(null)
   const status = ref<ApiFetchStatus>('idle')
 
   const getASingleProduct = async (id: number) => {
@@ -13,9 +13,9 @@ export const getProductsItem = () => {
 
     // await delay(4)
 
-    products.value = data
+    product.value = data
     status.value = 'success'
   }
 
-  return { products, status, getASingleProduct }
+  return { product, status, getASingleProduct }
 }

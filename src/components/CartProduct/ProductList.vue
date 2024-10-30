@@ -4,6 +4,8 @@ import { Star } from 'lucide-vue-next'
 defineProps<{
   category?: string
   discount?: string | number
+  description?: string
+  id: string | number
   rating?: number
   title: string
   price: string
@@ -12,7 +14,7 @@ defineProps<{
 </script>
 
 <template>
-  <div class="relative group">
+  <router-link :to="`/product/${id}`" class="relative group">
     <div class="flex flex-col justify-start items-start gap-2 absolute mt-3 pl-3 flex-wrap">
       <button
         v-if="category"
@@ -40,5 +42,5 @@ defineProps<{
     </div>
     <div class="ml-10">{{ title }}</div>
     <div class="ml-10">${{ price }}</div>
-  </div>
+  </router-link>
 </template>
